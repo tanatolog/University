@@ -24,10 +24,10 @@ class Program
             return 1 / (num / den + s);
         }
 
-        static double P_n(double R, int n, int N)
+        static double P_n(double R, double n, int N)
         {
             if (n <= N)
-                return P_0(R, N) * Math.Pow(R, n) / Factorial(n);
+                return P_0(R, N) * Math.Pow(R, n) / Factorial((int)Math.Round(n));
             else
                 return P_0(R, N) * Math.Pow(R, n) / (Factorial(N) * Math.Pow(N, (n - N)));
         }
@@ -54,9 +54,12 @@ class Program
         static void Main(string[] args)
         {
             for (int n = 0; n <= 12; n++) {
-                double t1 = P_n(3.1, n, 4);
+                double t1 = P_n(1.9, n, 4);
                 Console.WriteLine(Math.Round(t1, 8));
             }
+
+            double t2 = P_n(2.7, 2.7, 4);
+            Console.WriteLine(Math.Round(t2, 8)); 
         }
     }
 }
