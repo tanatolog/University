@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO laba 1", "IO laba 1.csproj", "{32168297-9079-4BF8-A2F6-0F0809AA7B0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32168297-9079-4BF8-A2F6-0F0809AA7B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32168297-9079-4BF8-A2F6-0F0809AA7B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32168297-9079-4BF8-A2F6-0F0809AA7B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32168297-9079-4BF8-A2F6-0F0809AA7B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E09ABF8-B996-4D33-8454-9DEACA1470B2}
+	EndGlobalSection
+EndGlobal
