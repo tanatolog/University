@@ -53,29 +53,10 @@ class Program
 
         static void Main(string[] args)
         {
-            double t1 = P_n(2.7, 2, 4);
-            Console.WriteLine(Math.Round(t1, 10));
-
-            double t2 = P_n(1.9, 7, 4);
-            Console.WriteLine(Math.Round(t2, 10));
-
-            t1 = (double)140000 / 6000;
-            Console.WriteLine(Math.Round(t1, 10));
-
-            t1 = (double)8 / (4 * 23.333333);
-            Console.WriteLine(Math.Round(t1, 10));
-
-            t1 = 8 / 23.333333;
-            Console.WriteLine(Math.Round(t1, 10));
-
-            t1 = L(4, 0.085714);
-            Console.WriteLine(Math.Round(t1, 10));
-
-            t1 = (double)(0.0000419 + 0.342857)/8;
-            Console.WriteLine(Math.Round(t1, 10));
-
-            t1 = (double)(0.0000419) / 8;
-            Console.WriteLine(Math.Round(t1, 10));
+            for (int n = 0; n <= 12; n++) {
+                double t1 = P_n(3.1, n, 4);
+                Console.WriteLine(Math.Round(t1, 8));
+            }
         }
     }
 }
