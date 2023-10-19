@@ -4,12 +4,13 @@ namespace VVK_laba_2
 {
 class Program
     {
-        static double Factorial(int n)
+        static int Factorial(int n)
         {
-            if (n == 0)
-                return 1;
-            else
-                return n * Factorial(n - 1);
+            int factorial = 1;
+            for (int i = 1; i <= n; i++)
+                factorial *= i;
+
+            return factorial;
         }
 
         static double P_0(double R, int N)
@@ -46,20 +47,34 @@ class Program
 
         static double L(int N, double p)
         {
-            double num = Math.Pow(N, (N - 1)) * Math.Pow(p, (N + 1)) * P_0_1(N, p);
+            double TT = (P_0_1(N, p));
+            double num = Math.Pow(N, (N - 1)) * Math.Pow(p, (N + 1)) * TT;
             double den = Factorial(N - 1) * Math.Pow((1 - p), 2);
             return num / den;
         }
 
+        static void IV(double N, double B, double La, double T)
+        {
+            double V = T / B;
+            Console.WriteLine("V = " + Math.Round(V, 6));
+            double u = B / T;
+            Console.WriteLine("u = " + Math.Round(u, 6));
+            double p = (La * V) / N;
+            Console.WriteLine("p = " + Math.Round(p, 6));
+            double R = N * p;
+            Console.WriteLine("R = " + Math.Round(R, 6));
+            double l = L((int)Math.Round(N), p);
+            Console.WriteLine("l = " + Math.Round(l, 6));
+            double W = l / La;
+            Console.WriteLine("W = " + Math.Round(W, 6));
+            double U = (l + R) / La;
+            Console.WriteLine("U = " + Math.Round(U, 6));
+            return;
+        }
+
         static void Main(string[] args)
         {
-            for (int n = 0; n <= 12; n++) {
-                double t1 = P_n(1.9, n, 4);
-                Console.WriteLine(Math.Round(t1, 8));
-            }
-
-            double t2 = P_n(2.7, 2.7, 4);
-            Console.WriteLine(Math.Round(t2, 8)); 
+            IV(1, 210000, 8, 6000);
         }
     }
 }
