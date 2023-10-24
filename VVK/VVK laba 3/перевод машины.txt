@@ -1,0 +1,375 @@
+using System;
+using System.Collections.Generic;
+
+public class SimplexData
+{
+    // Define your SimplexData structure here
+}
+
+public class SimplexResult
+{
+    // Define your SimplexResult structure here
+    public void Print()
+    {
+        // Implement the Print method
+    }
+}
+
+public class SimplexMethod
+{
+    // Implement your simplex_method function here
+}
+
+public class GomoryMethod
+{
+    public static void Solve(SimplexData data)
+    {
+        SimplexData inputData = new SimplexData(data);
+        SimplexResult tmpResult = SimplexMethod.Solve(inputData);
+
+        if (tmpResult != null)
+        {
+            tmpResult.Print();
+            Console.WriteLine(new string('=', 20));
+
+            SimplexResult result = tmpResult.GetResult();
+
+            if (!CheckVectorInteger(result.Vector))
+            {
+                SimplexData inputData = new SimplexData(data);
+                bool search = true;
+
+                while (search)
+                {
+                    SimplexResult r = SimplexMethod.Solve(inputData);
+
+                    if (r != null)
+                    {
+                        if (!CheckVectorInteger(r.Vector))
+                        {
+                            int line = GetLineMaxFraction(inputData);
+
+                            if (line != -1)
+                            {
+                                Console.WriteLine(inputData);
+                                FormConstraint(inputData, line);
+                                Console.WriteLine(inputData);
+                                inputData = new SimplexData(inputData);
+                            }
+                            else
+                            {
+                                inputData = null;
+                                Console.WriteLine("Solution does not exist");
+                            }
+                        }
+                        else
+                        {
+                            if (IsInteger(r.F))
+                            {
+                                Console.WriteLine("Result: ");
+                                r.Print();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Solution does not exist, F is not integer");
+                            }
+                            inputData = null;
+                            search = false;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Solution does not exist");
+                        search = false;
+                    }
+                }
+            }
+            else
+            {
+                if (IsInteger(result.F))
+                {
+                    Console.WriteLine("Integer answer");
+                }
+                else
+                {
+                    Console.WriteLine("Solution does not exist, F is not integer");
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Solution does not exist");
+        }
+    }
+
+    private static bool CheckVectorInteger(List<double> vector)
+    {
+        foreach (double item in vector)
+        {
+            if (!IsInteger(item))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static int GetLineMaxFraction(SimplexData data)
+    {
+        double max = 0.0;
+        int index = -1;
+
+        for (int i = 0; i < data.NumOfConstraints; i++)
+        {
+            double f = GetFraction(data.ConstraintsCoefficients[i][data.NumOfVars]);
+
+            if (f > max)
+            {
+                max = f;
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    private static void FormConstraint(SimplexData data, int line)
+    {
+        double right = GetFraction(data.ConstraintsCoefficients[line][data.NumOfVars]);
+        List<double> left = new List<double>();
+
+        for (int i = 0; i < data.NumOfVars; i++)
+        {
+            left.Add(GetFraction(data.ConstraintsCoefficients[line][i]));
+        }
+
+        data.AddConstraint(left, ">=", right);
+    }
+
+    private static double GetFraction(double f)
+    {
+        double integer = Math.Floor(f);
+        double res = Math.Abs(integer - f);
+
+        if (IsInteger(res))
+        {
+            return 0.0;
+        }
+
+        return res;
+    }
+
+    private static bool IsInteger(double value)
+    {
+        double integer = Math.Round(value);
+        const double EPS = 0.00000000001;
+
+        if (Math.Abs(value - integer) < EPS)
+        {
+            return true;
+        }
+
+        return false;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static double Factorial(int n)
+    {
+        if (n == 0)
+            return 1;
+        return n * Factorial(n - 1);
+    }
+
+    static double Pi_0(double b, int k)
+    {
+        double den = Math.Pow(b, k) / (Factorial(k) * (1 - b / k)) + Enumerable.Range(0, k).Sum(m => Math.Pow(b, m) / Factorial(m));
+        return 1 / den;
+    }
+
+    static double L(double b, int k)
+    {
+        double p = Pi_0(b, k);
+        return p * Math.Pow(b, k + 1) / (Factorial(k) * k * Math.Pow((1 - b / k), 2));
+    }
+
+    static double M(double b, int k)
+    {
+        return b + L(b, k);
+    }
+
+    static void Main(string[] args)
+    {
+        var bks = new List<(double, int)> { (0.15927, 2), (0.01704, 1), (0.067, 2), (0.04686, 2) };
+
+        double total = 1;
+
+        Console.WriteLine("p_i");
+        foreach ((double b, int k) in bks)
+        {
+            double pi = Pi_0(b, k);
+            Console.WriteLine(pi);
+            total *= pi;
+        }
+
+        Console.WriteLine("l_i");
+        foreach ((double b, int k) in bks)
+        {
+            double l = L(b, k);
+            Console.WriteLine(l.ToString("0.00000"));
+        }
+
+        Console.WriteLine("m_i");
+        foreach ((double b, int k) in bks)
+        {
+            double m = M(b, k);
+            Console.WriteLine(m.ToString("0.00000"));
+        }
+
+        double l0 = 0.1;
+        var lambdas = new List<double> { 0.3704, 0.0852, 0.1, 0.0852 };
+
+        Console.WriteLine("w_i");
+        foreach ((var bk, double lm) in bks.Zip(lambdas, (a, b) => (a, b)))
+        {
+            double w = L(bk.Item1, bk.Item2) / lm;
+            Console.WriteLine(w.ToString("0.00000"));
+        }
+
+        Console.WriteLine("u_i");
+        foreach ((var bk, double lm) in bks.Zip(lambdas, (a, b) => (a, b)))
+        {
+            double u = M(bk.Item1, bk.Item2) / lm;
+            Console.WriteLine(u.ToString("0.00000"));
+        }
+
+        Console.WriteLine("P");
+        Console.WriteLine(total);
+
+        Console.WriteLine("L");
+        double sumL = bks.Zip(lambdas, (a, b) => L(a.Item1, a.Item2) * b).Sum();
+        Console.WriteLine(sumL);
+
+        Console.WriteLine("M");
+        double sumM = bks.Zip(lambdas, (a, b) => M(a.Item1, a.Item2) * b).Sum();
+        Console.WriteLine(sumM);
+
+        Console.WriteLine("W");
+        double sumW = bks.Zip(lambdas, (a, b) => L(a.Item1, a.Item2) / b * (b / l0)).Sum();
+        Console.WriteLine(sumW);
+
+        Console.WriteLine("U");
+        double sumU = bks.Zip(lambdas, (a, b) => M(a.Item1, a.Item2) / b * (b / l0)).Sum();
+        Console.WriteLine(sumU);
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        double l0 = 0.1;
+        List<double> lambda = new List<double> { 0.37037, 0.085185, 0.1, 0.085185 };
+        List<double> v = new List<double> { 0.43, 0.2, 0.67, 0.55 };
+        List<double> a = lambda.ConvertAll(l => Math.Round(l / l0, 5));
+        List<int> k = new List<int> { 2, 1, 2, 2 };
+        double ou = 3.74631;
+
+        for (int i = 0; i < lambda.Count; i++)
+        {
+            Console.WriteLine("l(" + i + ") = " + lambda[i]);
+        }
+
+        for (int i = 0; i < a.Count; i++)
+        {
+            Console.WriteLine("a(" + i + ") = " + a[i]);
+        }
+
+        List<double> b = new List<double>();
+        for (int i = 0; i < lambda.Count; i++)
+        {
+            double bi = lambda[i] * v[i];
+            Console.WriteLine("b(" + i + ") = " + bi);
+            b.Add(bi);
+        }
+
+        List<double> pi = new List<double>();
+        double PI = 1;
+        for (int i = 0; i < k.Count; i++)
+        {
+            double p;
+            if (k[i] == 1)
+            {
+                p = 1 - b[i];
+                Console.WriteLine("P(" + i + ") = " + p);
+            }
+            else
+            {
+                p = 1 / (Math.Pow(b[i], 2) / (2 * (1 - b[i] / 2)) + 1 + b[i]);
+                Console.WriteLine("P(" + i + ") = " + p);
+            }
+            pi.Add(Math.Round(p, 5));
+            PI *= p;
+        }
+
+        Console.WriteLine("PI = " + PI);
+
+        List<double> l = new List<double>();
+        for (int i = 0; i < b.Count; i++)
+        {
+            double li = (Math.Pow(b[i], k[i] + 1) / (k[i] * k[i] * Math.Pow((1 - b[i] / k[i]), 2))) * pi[i];
+            Console.WriteLine("l(" + i + ") = " + li);
+            l.Add(Math.Round(li, 5));
+        }
+        Console.WriteLine("L = " + l.Sum());
+
+        List<double> ro = new List<double>();
+        for (int i = 0; i < b.Count; i++)
+        {
+            double roi = b[i] / k[i];
+            ro.Add(roi);
+        }
+
+        List<double> m = new List<double>();
+        for (int i = 0; i < ro.Count; i++)
+        {
+            double mi = l[i] + b[i];
+            Console.WriteLine("m(" + i + ") = " + mi);
+            m.Add(Math.Round(mi, 5));
+        }
+        Console.WriteLine("M = " + m.Sum());
+
+        List<double> w = new List<double>();
+        for (int i = 0; i < l.Count; i++)
+        {
+            double wi = l[i] / lambda[i];
+            Console.WriteLine("w(" + i + ") = " + wi);
+            w.Add(wi);
+        }
+        Console.WriteLine("W = " + a.Zip(w, (ai, wi) => ai * wi).Sum());
+
+        List<double> u = new List<double>();
+        for (int i = 0; i < m.Count; i++)
+        {
+            double ui = m[i] / lambda[i];
+            Console.WriteLine("u(" + i + ") = " + ui);
+            u.Add(ui);
+        }
+        double totalU = a.Zip(u, (ai, ui) => ai * ui).Sum();
+        Console.WriteLine("U = " + totalU);
+
+        double du = 100 - ((totalU * 100) / ou);
+        Console.WriteLine("du = " + du);
+    }
+}
+
