@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "e:\\things\\VS\\Projects\\IO laba 2\\IO laba 1.csproj": {}
+    "c:\\things\\Git\\University\\Исследование операций\\IO laba 2\\IO laba 1.csproj": {}
   },
   "projects": {
-    "e:\\things\\VS\\Projects\\IO laba 2\\IO laba 1.csproj": {
+    "c:\\things\\Git\\University\\Исследование операций\\IO laba 2\\IO laba 1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\things\\VS\\Projects\\IO laba 2\\IO laba 1.csproj",
+        "projectUniqueName": "c:\\things\\Git\\University\\Исследование операций\\IO laba 2\\IO laba 1.csproj",
         "projectName": "IO laba 1",
-        "projectPath": "e:\\things\\VS\\Projects\\IO laba 2\\IO laba 1.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "e:\\things\\VS\\Projects\\IO laba 2\\obj\\",
+        "projectPath": "c:\\things\\Git\\University\\Исследование операций\\IO laba 2\\IO laba 1.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "c:\\things\\Git\\University\\Исследование операций\\IO laba 2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -53,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

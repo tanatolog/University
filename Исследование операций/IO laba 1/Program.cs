@@ -92,7 +92,7 @@ namespace IO_laba_1
                     else
                     {
                         data.print_result();
-                        if (data.check_many_solutions())         // Проверить много решений
+                        if (data.check_many_solutions())   
                         {
                             Console.WriteLine("Many solutions!");
                         }
