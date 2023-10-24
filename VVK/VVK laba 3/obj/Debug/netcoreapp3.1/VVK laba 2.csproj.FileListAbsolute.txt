@@ -40,3 +40,17 @@ e:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.cspro
 e:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.dll
 e:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.pdb
 e:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.genruntimeconfig.cache
+c:\things\Git\University\VVK\VVK laba 3\bin\Debug\netcoreapp3.1\VVK laba 2.exe
+c:\things\Git\University\VVK\VVK laba 3\bin\Debug\netcoreapp3.1\VVK laba 2.deps.json
+c:\things\Git\University\VVK\VVK laba 3\bin\Debug\netcoreapp3.1\VVK laba 2.runtimeconfig.json
+c:\things\Git\University\VVK\VVK laba 3\bin\Debug\netcoreapp3.1\VVK laba 2.runtimeconfig.dev.json
+c:\things\Git\University\VVK\VVK laba 3\bin\Debug\netcoreapp3.1\VVK laba 2.dll
+c:\things\Git\University\VVK\VVK laba 3\bin\Debug\netcoreapp3.1\VVK laba 2.pdb
+c:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.csproj.AssemblyReference.cache
+c:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.GeneratedMSBuildEditorConfig.editorconfig
+c:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.AssemblyInfoInputs.cache
+c:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.AssemblyInfo.cs
+c:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.csproj.CoreCompileInputs.cache
+c:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.dll
+c:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.pdb
+c:\things\Git\University\VVK\VVK laba 3\obj\Debug\netcoreapp3.1\VVK laba 2.genruntimeconfig.cache

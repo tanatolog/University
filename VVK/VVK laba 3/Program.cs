@@ -7,10 +7,10 @@ class Program
     static void Main(string[] args)
     {
         double l0 = 0.1;
-        List<double> lambda = new List<double> { 0.37037, 0.085185, 0.1, 0.085185 };
-        List<double> v = new List<double> { 0.43, 0.2, 0.67, 0.55 };
-        List<double> a = lambda.ConvertAll(l => Math.Round(l / l0, 5));
-        List<int> k = new List<int> { 2, 1, 2, 2 };
+        List<double> lambda = new List<double> { 0.3846153, 0.05, 0.1, 0.13461 };
+        List<double> v = new List<double> { 0.43, 0.24, 0.3, 0.9 };
+        List<double> a = lambda.ConvertAll(l => Math.Round(l / l0, 10));
+        List<int> k = new List<int> { 1, 1, 1, 2 };
         double ou = 3.74631;
 
         for (int i = 0; i < lambda.Count; i++)
@@ -27,7 +27,7 @@ class Program
 
         for (int i = 0; i < lambda.Count; i++)
         {
-            Console.WriteLine("stacionar(" + i + ") = " + k[i] / (a[i] * v[i]));
+            Console.WriteLine("stacionar(" + i + ") = " + (k[i] / (a[i] * v[i])));
         }
 
         List<double> b = new List<double>();
@@ -53,7 +53,7 @@ class Program
                 p = 1 / (Math.Pow(b[i], 2) / (2 * (1 - b[i] / 2)) + 1 + b[i]);
                 Console.WriteLine("P(" + i + ") = " + p);
             }
-            pi.Add(Math.Round(p, 5));
+            pi.Add(Math.Round(p, 10));
             PI *= p;
         }
 
@@ -64,7 +64,7 @@ class Program
         {
             double li = (Math.Pow(b[i], k[i] + 1) / (k[i] * k[i] * Math.Pow((1 - b[i] / k[i]), 2))) * pi[i];
             Console.WriteLine("l(" + i + ") = " + li);
-            l.Add(Math.Round(li, 5));
+            l.Add(Math.Round(li, 10));
         }
         sum = 0;
         foreach(double tmp in l)
@@ -85,7 +85,7 @@ class Program
         {
             double mi = l[i] + b[i];
             Console.WriteLine("m(" + i + ") = " + mi);
-            m.Add(Math.Round(mi, 5));
+            m.Add(Math.Round(mi, 10));
         }
         sum = 0;
         foreach (double tmp in m)

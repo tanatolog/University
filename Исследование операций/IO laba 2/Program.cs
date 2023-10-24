@@ -126,9 +126,15 @@ namespace IO_laba_2
                             }
                             else
                             {
-                                List<(int, double)> nonIntegerValues = GetNonIntegerValue(CurrenResult);
-                                if (nonIntegerValues.Count > 0)
+                                bool BranchIsMax = true;
+                                foreach (SimplexResult item in intResults)
                                 {
+                                    if (item.f > CurrenResult.f) { BranchIsMax = false; }
+                                }
+                                List<(int, double)> nonIntegerValues = GetNonIntegerValue(CurrenResult);
+                                if ((nonIntegerValues.Count > 0) && BranchIsMax)
+                                {
+                                    
                                     int index = nonIntegerValues[0].Item1;
                                     double value = nonIntegerValues[0].Item2;
 
@@ -192,19 +198,6 @@ namespace IO_laba_2
             }
             return result;
         }
-
-        /*private static bool CheckVecInteger(List<double> vec)
-        {
-            foreach (double item in vec)
-            {
-                if (!IsInteger(item))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }*/
 
         private static bool CheckResultForInteger(SimplexResult result)
         {

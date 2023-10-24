@@ -414,7 +414,7 @@ namespace IO_laba_2
             return false;
         }
 
-        public override string ToString()
+        /*public override string ToString()
         {
             string result = "";
             result += "========================================\n";
@@ -438,6 +438,74 @@ namespace IO_laba_2
                     if (item > 10000) { coefficientsLine += $"{"M",8}"; }
                     else if (item < -10000) { coefficientsLine += $"{"-M",8}"; }
                     else { coefficientsLine += $"{item,8:F4}"; }
+                }
+                result += constraintLine + "\n";
+            } 
+
+            string basisString = "Basis: ";
+            foreach (var item in basis)
+            {
+                if (item.HasValue)
+                {
+                    basisString += $"{item.Value,-5}";
+                }
+                else
+                {
+                    basisString += $"{'n',5}";
+                }
+            }
+            result += basisString + "\n";
+
+            string artificialVariablesString = "Artificial variables: ";
+            foreach (var item in artificial_variables)
+            {
+                artificialVariablesString += $"{item,-8:F4}";
+            }
+            result += artificialVariablesString + "\n";
+
+            string conditionsString = "Conditions: ";
+            foreach (var item in conditions)
+            {
+                conditionsString += $"{item} ";
+            }
+            result += conditionsString + "\n";
+
+            string deltasString = "Deltas:\n";
+            foreach (var item in deltas)
+            {
+                if (item > 10000) { deltasString += $"{"M "}"; }
+                else if (item < -10000) { deltasString += $"{"-M "}"; }
+                else { deltasString += $"{item:F} "; }
+            }
+            result += deltasString;
+
+            return result;
+        }*/
+
+        public override string ToString()
+        {
+            string result = "";
+            result += "========================================\n";
+            result += $"number of variables: {num_of_vars}\n";
+            result += $"number of constraints: {num_of_constraints}\n";
+            result += $"min(0) or max(1): {direction}\n";
+            result += "----------------------------------------\n";
+
+            string coefficientsLine = "";
+            foreach (var item in coefficients)
+            {
+                if (item > 10000) { coefficientsLine += $"{"M",8}"; }
+                else if (item < -10000) { coefficientsLine += $"{"-M",8}"; }
+                else { coefficientsLine += $"{item,8:F4}"; }
+            }
+            result += coefficientsLine + "\n";
+
+            foreach (var vec in constraints_coefficients)
+            {
+                string constraintLine = "";
+                foreach (var item in vec)
+                {
+                    constraintLine += $"{item,8:F4}";
                 }
                 result += constraintLine + "\n";
             }

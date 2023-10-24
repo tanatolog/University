@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="test1">
+		<CBX_INST_ENTRY INSTANCE_NAME="|test1|counter_high:inst1|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_kph.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|test1|pll_25mhz:inst|altpll:altpll_component" CBX_FILE_NAME="pll_25mhz_altpll.v"/>
+	</PROJECT>
+</LOG_ROOT>
