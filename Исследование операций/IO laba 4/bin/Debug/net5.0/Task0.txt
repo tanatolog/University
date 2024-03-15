@@ -1,0 +1,7 @@
+Reserves: 20, 40 ;
+Needs: 10, 20, 30 ;
+Costs(a/b):
+2, 3, 4,
+1, 2, 5
+    
+end
