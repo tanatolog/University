@@ -14,3 +14,19 @@ E:\things\VS\Projects\IO laba 5\obj\Debug\net5.0\IO laba 5.dll
 E:\things\VS\Projects\IO laba 5\obj\Debug\net5.0\ref\IO laba 5.dll
 E:\things\VS\Projects\IO laba 5\obj\Debug\net5.0\IO laba 5.pdb
 E:\things\VS\Projects\IO laba 5\obj\Debug\net5.0\IO laba 5.genruntimeconfig.cache
+E:\things\Git\University\Исследование операций\IO laba 5\bin\Debug\net5.0\IO laba 5.exe
+E:\things\Git\University\Исследование операций\IO laba 5\bin\Debug\net5.0\IO laba 5.deps.json
+E:\things\Git\University\Исследование операций\IO laba 5\bin\Debug\net5.0\IO laba 5.runtimeconfig.json
+E:\things\Git\University\Исследование операций\IO laba 5\bin\Debug\net5.0\IO laba 5.runtimeconfig.dev.json
+E:\things\Git\University\Исследование операций\IO laba 5\bin\Debug\net5.0\IO laba 5.dll
+E:\things\Git\University\Исследование операций\IO laba 5\bin\Debug\net5.0\ref\IO laba 5.dll
+E:\things\Git\University\Исследование операций\IO laba 5\bin\Debug\net5.0\IO laba 5.pdb
+E:\things\Git\University\Исследование операций\IO laba 5\obj\Debug\net5.0\IO laba 5.csproj.AssemblyReference.cache
+E:\things\Git\University\Исследование операций\IO laba 5\obj\Debug\net5.0\IO laba 5.GeneratedMSBuildEditorConfig.editorconfig
+E:\things\Git\University\Исследование операций\IO laba 5\obj\Debug\net5.0\IO laba 5.AssemblyInfoInputs.cache
+E:\things\Git\University\Исследование операций\IO laba 5\obj\Debug\net5.0\IO laba 5.AssemblyInfo.cs
+E:\things\Git\University\Исследование операций\IO laba 5\obj\Debug\net5.0\IO laba 5.csproj.CoreCompileInputs.cache
+E:\things\Git\University\Исследование операций\IO laba 5\obj\Debug\net5.0\IO laba 5.dll
+E:\things\Git\University\Исследование операций\IO laba 5\obj\Debug\net5.0\ref\IO laba 5.dll
+E:\things\Git\University\Исследование операций\IO laba 5\obj\Debug\net5.0\IO laba 5.pdb
+E:\things\Git\University\Исследование операций\IO laba 5\obj\Debug\net5.0\IO laba 5.genruntimeconfig.cache

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\things\\VS\\Projects\\IO laba 4\\IO laba 1.csproj",
+      "projectUniqueName": "E:\\things\\Git\\University\\Исследование операций\\IO laba 4\\IO laba 1.csproj",
       "projectName": "IO laba 1",
-      "projectPath": "e:\\things\\VS\\Projects\\IO laba 4\\IO laba 1.csproj",
+      "projectPath": "E:\\things\\Git\\University\\Исследование операций\\IO laba 4\\IO laba 1.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "e:\\things\\VS\\Projects\\IO laba 4\\obj\\",
+      "outputPath": "E:\\things\\Git\\University\\Исследование операций\\IO laba 4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
