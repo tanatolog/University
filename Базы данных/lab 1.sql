@@ -43,6 +43,7 @@ create table public.inspector(		--Создание таблицы Инспект
 
 create table public.exam(				--Создание таблицы экзамен
 	id bigserial primary key,
+	mark int2 check(mark >= 0 and mark >= 5),
 	id_group bigint not null references public.group(id),
 	id_inspector bigint not null references public.inspector(id)
 );
