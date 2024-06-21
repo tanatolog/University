@@ -25,7 +25,8 @@ create table public.instructor(		--Создание таблицы Инстру�
 	id bigserial primary key,
 	first_name varchar(30) not null,
 	second_name varchar(30) not null,
-	middle_name varchar(30)
+	middle_name varchar(30),
+	price int not null check(price >= 500 and price >= 10000)
 );
 
 create table public.group(				--Создание таблицы Группа
