@@ -1,9 +1,9 @@
 /*CREATE TABLE log_examinee (
- id BIGSERIAL PRIMARY KEY,
- examinee_id BIGINT REFERENCES examinee(id),
- change_datetime TIMESTAMP DEFAULT NOW(),
- old_value bigint DEFAULT NULL,
- new_value bigint DEFAULT NULL
+	id BIGSERIAL PRIMARY KEY,
+	examinee_id BIGINT DEFAULT NULL,
+	change_datetime TIMESTAMP DEFAULT NOW(),
+	old_value bigint DEFAULT NULL,
+	new_value bigint DEFAULT NULL
 );*/
 
 CREATE OR REPLACE FUNCTION trigger_func()
@@ -30,4 +30,3 @@ AFTER UPDATE OR INSERT
 ON examinee
 FOR EACH ROW
 EXECUTE PROCEDURE trigger_func();
-
