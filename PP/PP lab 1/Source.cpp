@@ -54,17 +54,15 @@ size_t colorize(const graph_t& graph) {
         vector<size_t> used_colors(size, 0);
 
         for (size_t v : ord) {
-            if (!colored[v]) {
-                for (auto to : graph[v]) {
-                    if (colored[to]) {
-                        used_colors[colors[to]] = 1; //этот цвет занят
-                    }
+            for (auto to : graph[v]) {
+                if (colored[to]) {
+                    used_colors[colors[to]] = 1; //этот цвет занят
                 }
-                auto c = _mex(used_colors);  //ищем незанятый цвет
-                colored[v] = 1;              //помечаем вершину как раскрашеную
-                colors[v] = c;               //раскрашиваем вершину
-                used_colors.assign(size, 0); //сброс всех цветов
             }
+            auto c = _mex(used_colors);  //ищем незанятый цвет
+            colored[v] = 1;              //помечаем вершину как раскрашеную
+            colors[v] = c;               //раскрашиваем вершину
+            used_colors.assign(size, 0); //сброс всех цветов
         }
         size_t colors_count = 1 + *max_element(colors.begin(), colors.end());
         min = std::min(min, colors_count);
