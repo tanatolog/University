@@ -1,0 +1,3 @@
+﻿  main.cpp
+e:\things\VS\Projects\PP generator\main.cpp(18,25): warning C4018: <: несоответствие типов со знаком и без знака
+  PP generator.vcxproj -> E:\things\VS\Projects\PP generator\Debug\PP generator.exe
