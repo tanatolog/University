@@ -1,20 +1,18 @@
 #include <vector>
 #include <iostream>
-#include <cstdint>
-#include <set>
-#include <unordered_set>
 #include <algorithm>
 #include <fstream>
 #include <chrono>
-#include <iomanip>
 
 using namespace std;
 using namespace chrono;
 using graph_t = vector<vector<size_t>>;
 
 istream& operator>>(istream& is, graph_t& graph) {
-    size_t n; is >> n; // vertexes
-    size_t m; is >> m; // edges
+    size_t n;
+    size_t m;
+    is >> n; // вершины
+    is >> m; // грани
     graph.clear();
     graph.resize(n);
 
@@ -59,7 +57,7 @@ size_t colorize(const graph_t& graph) {
                     used_colors[colors[to]] = 1; //этот цвет занят
                 }
             }
-            auto c = _mex(used_colors);  //ищем незанятый цвет
+            size_t c = _mex(used_colors);//ищем незанятый цвет
             colored[v] = 1;              //помечаем вершину как раскрашеную
             colors[v] = c;               //раскрашиваем вершину
             used_colors.assign(size, 0); //сброс всех цветов

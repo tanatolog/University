@@ -24,7 +24,7 @@ void generate(ostream& output, int vert_count, int edges_count) {
     }
 
     output << vert_count << ' ' << edges_count << endl;
-    for (const auto& edge : edges) {
+    for (const pair<int, int>& edge : edges) {
         output << edge.first << ' ' << edge.second << endl;
     }
 }
@@ -33,9 +33,7 @@ int main() {
     ofstream output("../input.txt");
 
     pair<int, int> params[] = {
-            {5, 7},
-            {75, 1000},
-            {75, 2500}, {90, 300}, {95, 2500}, 
+            {5, 7}, {75, 1000}, {75, 2500}, {90, 300}, {95, 2500}, 
             {150, 5000}, {150, 10000}, {300, 5000}, {300, 10000},
             {170, 10000}, {250, 14000}, {250, 17000}, {300, 34000}, {400, 40000}
     };
