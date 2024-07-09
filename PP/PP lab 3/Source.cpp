@@ -7,8 +7,6 @@
 #include <omp.h>
 #include <random>
 
-#include <thread>
-
 using namespace std;
 using namespace chrono;
 using graph_t = vector<vector<size_t>>;
@@ -39,7 +37,7 @@ size_t OMPColorize(const graph_t& graph) {
     size_t orders_count = 500;
     vector<vector<size_t>> orders(orders_count);
 
-#pragma omp parallel for                           //выполняем цикл параллельно
+#pragma omp parallel for schedule(guided)                           //выполняем цикл параллельно
     for (int i = 0; i < orders_count; ++i) {
         random_device rd;
         mt19937 g(rd());
@@ -47,10 +45,12 @@ size_t OMPColorize(const graph_t& graph) {
         iota(order.begin(), order.end(), 0);
         shuffle(order.begin(), order.end(), g);
         orders[i] = order;
+        //int n = omp_get_thread_num();
+        //printf("Thread %d\n", n);
     }
 
     vector<size_t> storage(orders_count, size);
-
+    //size_t min = size;
 #pragma omp parallel for schedule(guided)
     for (int i = 0; i < orders_count; ++i) {                   
         vector<size_t> colored(size, 0);     //закрашеные вершины
@@ -69,6 +69,11 @@ size_t OMPColorize(const graph_t& graph) {
             colors[v] = c;               //раскрашиваем вершину
             used_colors.assign(size, 0); //сброс всех цветов
         }
+        size_t colors_count = 1 + *max_element(colors.begin(), colors.end());
+/*#pragma omp critical
+        {
+            min = std::min(min, colors_count);
+        }*/
         storage[i] = 1 + *max_element(colors.begin(), colors.end());
     }
 
