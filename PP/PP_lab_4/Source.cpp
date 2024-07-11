@@ -38,9 +38,12 @@ size_t colorize(const graph_t& graph, const vector<size_t>& order) {
     vector<size_t> used_colors(size, 0); // использованные цвета
 
     for (size_t v : order) {
-        for (auto to : graph[v]) {
-            if (colored[to] == 1) {
-                used_colors[colors[to]] = 1; // этот цвет занят
+        for (int i = 0; i < graph[v].size(); ++i) {
+            size_t to = graph[v][i];
+            if (to < size) {
+                if (colored[to] == 1) {
+                    used_colors[colors[to]] = 1; // этот цвет занят
+                }
             }
         }
         size_t c = _mex(used_colors); // ищем незанятый цвет
