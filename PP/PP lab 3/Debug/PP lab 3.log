@@ -1,4 +1,4 @@
 ﻿  Source.cpp
-c:\things\VS\Projects\PP lab 3\Source.cpp(41,23): warning C4018: <: несоответствие типов со знаком и без знака
-c:\things\VS\Projects\PP lab 3\Source.cpp(55,23): warning C4018: <: несоответствие типов со знаком и без знака
-  PP lab 3.vcxproj -> C:\things\VS\Projects\PP lab 3\Debug\PP lab 3.exe
+C:\things\Git\University\PP\PP lab 3\Source.cpp(41,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\things\Git\University\PP\PP lab 3\Source.cpp(55,23): warning C4018: <: несоответствие типов со знаком и без знака
+  PP lab 3.vcxproj -> C:\things\Git\University\PP\PP lab 3\Debug\PP lab 3.exe
