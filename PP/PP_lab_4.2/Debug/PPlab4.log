@@ -1,0 +1,3 @@
+﻿  Source.cpp
+c:\things\VS\Projects\PP_lab_4\Source.cpp(48,27): warning C4018: <: несоответствие типов со знаком и без знака
+  PPlab4.vcxproj -> C:\things\VS\Projects\PP_lab_4\Debug\PPlab4.exe

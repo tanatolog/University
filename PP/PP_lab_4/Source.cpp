@@ -127,7 +127,7 @@ int main(int argc, char* argv[]) {
     graph_t graph;
     size_t cnt = 0;
     ifstream input("input.txt");
-    ofstream output("output.txt");
+    ofstream output("../output.txt");
 
     if (world_rank == 0) {                      // Задача главного процесса 0
         input >> cnt;                           // Получаем из input кол-во тестовых графов
@@ -150,9 +150,8 @@ int main(int argc, char* argv[]) {
 
         if (world_rank == 0) {                  // Задача главного процесса 0
             auto time = duration_cast<milliseconds>(stop - start).count();
-            ofstream output("output.txt", ios::app);
-            output << res << endl;
-            cout << time << endl;
+            ofstream output("../output.txt", ios::app);
+            output << res << endl;              //cout << time << endl;
         }
     }
 

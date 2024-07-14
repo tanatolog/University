@@ -2,3 +2,4 @@ C:\Users\User\source\repos\PPlab4\Debug\PPlab4.exe
 e:\things\VS\Projects\PPlab4\Debug\PPlab4.exe
 e:\things\VS\Projects\PP lab 4\Debug\PPlab4.exe
 e:\things\VS\Projects\PP_lab_4\Debug\PPlab4.exe
+C:\things\Git\University\PP\PP_lab_4\Debug\PPlab4.exe
