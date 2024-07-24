@@ -1,0 +1,3 @@
+﻿  ConsoleApplication1.cpp
+e:\things\VS\Projects\CM laba 4\ConsoleApplication1\ConsoleApplication1.cpp(213,12): warning C4101: I: неиспользованная локальная переменная
+  ConsoleApplication1.vcxproj -> E:\things\VS\Projects\CM laba 4\ConsoleApplication1\Debug\ConsoleApplication1.exe

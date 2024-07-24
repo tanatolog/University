@@ -1,0 +1,10 @@
+e:\things\VS\Projects\Images\bin\Debug\Images.exe.config
+e:\things\VS\Projects\Images\bin\Debug\Images.exe
+e:\things\VS\Projects\Images\bin\Debug\Images.pdb
+e:\things\VS\Projects\Images\obj\Debug\Images.csproj.AssemblyReference.cache
+e:\things\VS\Projects\Images\obj\Debug\Images.Form1.resources
+e:\things\VS\Projects\Images\obj\Debug\Images.Properties.Resources.resources
+e:\things\VS\Projects\Images\obj\Debug\Images.csproj.GenerateResource.cache
+e:\things\VS\Projects\Images\obj\Debug\Images.csproj.CoreCompileInputs.cache
+e:\things\VS\Projects\Images\obj\Debug\Images.exe
+e:\things\VS\Projects\Images\obj\Debug\Images.pdb

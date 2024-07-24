@@ -1,0 +1,10 @@
+E:\things\VS\Projects\CG laba 2\obj\Debug\CG laba 2.csproj.AssemblyReference.cache
+E:\things\VS\Projects\CG laba 2\obj\Debug\CG_laba_2.Properties.Resources.resources
+E:\things\VS\Projects\CG laba 2\obj\Debug\CG laba 2.csproj.GenerateResource.cache
+E:\things\VS\Projects\CG laba 2\obj\Debug\CG laba 2.csproj.CoreCompileInputs.cache
+E:\things\VS\Projects\CG laba 2\bin\Debug\CG laba 2.exe.config
+E:\things\VS\Projects\CG laba 2\bin\Debug\CG laba 2.exe
+E:\things\VS\Projects\CG laba 2\bin\Debug\CG laba 2.pdb
+E:\things\VS\Projects\CG laba 2\obj\Debug\CG laba 2.exe
+E:\things\VS\Projects\CG laba 2\obj\Debug\CG laba 2.pdb
+E:\things\VS\Projects\CG laba 2\obj\Debug\CG_laba_2.Form1.resources

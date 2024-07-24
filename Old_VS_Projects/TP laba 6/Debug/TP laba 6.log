@@ -1,0 +1,6 @@
+﻿  game.cpp
+e:\things\VS\Projects\TP laba 6\game.cpp(89,8): warning C4101: pt: неиспользованная локальная переменная
+e:\things\VS\Projects\TP laba 6\game.cpp(172,13): warning C4244: инициализация: преобразование "ULONGLONG" в "DWORD", возможна потеря данных
+  main.cpp
+  Создание кода...
+  TP laba 6.vcxproj -> E:\things\VS\Projects\TP laba 6\Debug\TP laba 6.exe

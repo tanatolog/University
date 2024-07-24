@@ -1,0 +1,4 @@
+e:\things\VS\Projects\WinFormsTest\Debug\WinFormsTest.vcxproj.AssemblyReference.cache
+e:\things\VS\Projects\WinFormsTest\Debug\WinFormsTest.exe
+e:\things\VS\Projects\WinFormsTest\Debug\WinFormsTest.MyForm.resources
+e:\things\VS\Projects\WinFormsTest\Debug\WinFormsTest.vcxproj.GenerateResource.cache

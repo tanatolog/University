@@ -1,0 +1,60 @@
+E:\things\VS\Projects\CGlaba1\bin\Debug\CGlaba1.exe.config
+E:\things\VS\Projects\CGlaba1\bin\Debug\CGlaba1.exe
+E:\things\VS\Projects\CGlaba1\bin\Debug\CGlaba1.pdb
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.csproj.AssemblyReference.cache
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.Form1.resources
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.Properties.Resources.resources
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.csproj.GenerateResource.cache
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.csproj.CoreCompileInputs.cache
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.exe
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.pdb
+E:\things\VS\Projects\CG laba 1\bin\Debug\CGlaba1.exe.config
+E:\things\VS\Projects\CG laba 1\bin\Debug\CGlaba1.exe
+E:\things\VS\Projects\CG laba 1\bin\Debug\CGlaba1.pdb
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.csproj.AssemblyReference.cache
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.Form1.resources
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.Properties.Resources.resources
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.csproj.GenerateResource.cache
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.csproj.CoreCompileInputs.cache
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.exe
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.pdb
+e:\things\VS\Projects\CG laba 3\obj\Debug\CGlaba1.csproj.AssemblyReference.cache
+e:\things\VS\Projects\CG laba 3\obj\Debug\CGlaba1.Form1.resources
+e:\things\VS\Projects\CG laba 3\obj\Debug\CGlaba1.Properties.Resources.resources
+e:\things\VS\Projects\CG laba 3\obj\Debug\CGlaba1.csproj.GenerateResource.cache
+e:\things\VS\Projects\CG laba 3\obj\Debug\CGlaba1.csproj.CoreCompileInputs.cache
+e:\things\VS\Projects\CG laba 3\obj\Debug\CGlaba1.exe
+e:\things\VS\Projects\CG laba 3\obj\Debug\CGlaba1.pdb
+e:\things\VS\Projects\CG laba 3\bin\Debug\CGlaba1.exe.config
+e:\things\VS\Projects\CG laba 3\bin\Debug\CGlaba1.exe
+e:\things\VS\Projects\CG laba 3\bin\Debug\CGlaba1.pdb
+E:\things\VS\Projects\CG laba 3 — копия\bin\Debug\CGlaba1.exe.config
+E:\things\VS\Projects\CG laba 3 — копия\bin\Debug\CGlaba1.exe
+E:\things\VS\Projects\CG laba 3 — копия\bin\Debug\CGlaba1.pdb
+E:\things\VS\Projects\CG laba 3 — копия\obj\Debug\CGlaba1.csproj.AssemblyReference.cache
+E:\things\VS\Projects\CG laba 3 — копия\obj\Debug\CGlaba1.Form1.resources
+E:\things\VS\Projects\CG laba 3 — копия\obj\Debug\CGlaba1.Properties.Resources.resources
+E:\things\VS\Projects\CG laba 3 — копия\obj\Debug\CGlaba1.csproj.GenerateResource.cache
+E:\things\VS\Projects\CG laba 3 — копия\obj\Debug\CGlaba1.csproj.CoreCompileInputs.cache
+E:\things\VS\Projects\CG laba 3 — копия\obj\Debug\CGlaba1.exe
+E:\things\VS\Projects\CG laba 3 — копия\obj\Debug\CGlaba1.pdb
+e:\things\VS\Projects\CG laba 4\obj\Debug\CGlaba1.csproj.AssemblyReference.cache
+e:\things\VS\Projects\CG laba 4\obj\Debug\CGlaba1.Form1.resources
+e:\things\VS\Projects\CG laba 4\obj\Debug\CGlaba1.Properties.Resources.resources
+e:\things\VS\Projects\CG laba 4\obj\Debug\CGlaba1.csproj.GenerateResource.cache
+e:\things\VS\Projects\CG laba 4\obj\Debug\CGlaba1.csproj.CoreCompileInputs.cache
+e:\things\VS\Projects\CG laba 4\obj\Debug\CGlaba1.exe
+e:\things\VS\Projects\CG laba 4\obj\Debug\CGlaba1.pdb
+e:\things\VS\Projects\CG laba 4\bin\Debug\CGlaba1.exe.config
+e:\things\VS\Projects\CG laba 4\bin\Debug\CGlaba1.exe
+e:\things\VS\Projects\CG laba 4\bin\Debug\CGlaba1.pdb
+e:\things\VS\Projects\CG laba 5\obj\Debug\CGlaba1.csproj.AssemblyReference.cache
+e:\things\VS\Projects\CG laba 5\obj\Debug\CGlaba1.Form1.resources
+e:\things\VS\Projects\CG laba 5\obj\Debug\CGlaba1.Properties.Resources.resources
+e:\things\VS\Projects\CG laba 5\obj\Debug\CGlaba1.csproj.GenerateResource.cache
+e:\things\VS\Projects\CG laba 5\obj\Debug\CGlaba1.csproj.CoreCompileInputs.cache
+e:\things\VS\Projects\CG laba 5\obj\Debug\CGlaba1.exe
+e:\things\VS\Projects\CG laba 5\obj\Debug\CGlaba1.pdb
+e:\things\VS\Projects\CG laba 5\bin\Debug\CGlaba1.exe.config
+e:\things\VS\Projects\CG laba 5\bin\Debug\CGlaba1.exe
+e:\things\VS\Projects\CG laba 5\bin\Debug\CGlaba1.pdb

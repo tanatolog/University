@@ -1,0 +1,10 @@
+E:\things\VS\Projects\TP laba 3\Debug\TP laba 3.exe
+C:\Users\user\Desktop\TP laba 3\Debug\TP laba 3.exe
+e:\things\VS\Projects\TP laba 3.4\Debug\TP laba 3.exe
+C:\Users\user\Desktop\TP laba 3.4\Debug\TP laba 3.exe
+e:\things\VS\Projects\TP laba 4.1\Debug\TP laba 3.exe
+c:\things\VS\Projects\TP laba 4.1\Debug\TP laba 3.exe
+e:\things\VS\Projects\TP laba 4.5\Debug\TP laba 3.exe
+e:\things\VS\Projects\TP laba 5.1\Debug\TP laba 3.exe
+e:\things\VS\Projects\TP laba 5.2\Debug\TP laba 3.exe
+c:\things\VS\Projects\TP laba 5.2\Debug\TP laba 3.exe

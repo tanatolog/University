@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  dllmain.cpp
+  GraphicLibrary.cpp
+c:\things\VS\Projects\TP laba 5.2\GraphicLibrary\GraphicLibrary.cpp(255,1): warning C4273: WndProc: несовместимое связывание dll
+c:\things\VS\Projects\TP laba 5.2\GraphicLibrary\GraphicLibrary.h(9,45): message : см. предыдущее определение "WndProc"
+  Создание кода...
+     Создается библиотека C:\things\VS\Projects\TP laba 5.2\GraphicLibrary\Debug\GraphicLibrary.lib и объект C:\things\VS\Projects\TP laba 5.2\GraphicLibrary\Debug\GraphicLibrary.exp
+  GraphicLibrary.vcxproj -> C:\things\VS\Projects\TP laba 5.2\GraphicLibrary\Debug\GraphicLibrary.dll

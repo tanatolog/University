@@ -1,0 +1,8 @@
+﻿  TP laba 1.cpp
+e:\things\VS\Projects\TP laba 1\TP laba 1.cpp(84,5): error C2561: multiplication: функция должна возвращать значение
+e:\things\VS\Projects\TP laba 1\TP laba 1.cpp(70): message : см. объявление "multiplication"
+e:\things\VS\Projects\TP laba 1\TP laba 1.cpp(124): message : выполняется компиляция ссылки на экземпляр шаблон функции "Y **multiplication<int>(Y **,Y **,const int,const int,const int)"
+          with
+          [
+              Y=int
+          ]

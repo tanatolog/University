@@ -1,0 +1,1 @@
+E:\things\VS\Projects\CudaTest\x64\Debug\CudaTest.exe

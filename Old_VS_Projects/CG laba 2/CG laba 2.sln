@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG laba 2", "CG laba 2.csproj", "{1261DC68-D15A-4A08-8F19-C4F936910CDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1261DC68-D15A-4A08-8F19-C4F936910CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1261DC68-D15A-4A08-8F19-C4F936910CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1261DC68-D15A-4A08-8F19-C4F936910CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1261DC68-D15A-4A08-8F19-C4F936910CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDCC9339-9143-4B3A-9BBD-FA67F4740D98}
+	EndGlobalSection
+EndGlobal

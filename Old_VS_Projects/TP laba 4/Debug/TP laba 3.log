@@ -1,0 +1,5 @@
+﻿  Assembling Source.asm...
+Source.asm(96): warning A6004: procedure argument or local not referenced : a
+Source.asm(96): warning A6004: procedure argument or local not referenced : x1
+Source.asm(96): warning A6004: procedure argument or local not referenced : x2
+  TP laba 3.vcxproj -> E:\things\VS\Projects\TP laba 4.5\Debug\TP laba 3.exe

@@ -1,0 +1,6 @@
+﻿  CM laba 1.cpp
+E:\things\VS\Projects\CM laba 1\CM laba 1.cpp(78,17): warning C4566: символ, представленный универсальным именем символа "\u2212", невозможно представить в текущей кодовой странице (1251)
+E:\things\VS\Projects\CM laba 1\CM laba 1.cpp(79,17): warning C4566: символ, представленный универсальным именем символа "\u2212", невозможно представить в текущей кодовой странице (1251)
+E:\things\VS\Projects\CM laba 1\CM laba 1.cpp(88,17): warning C4566: символ, представленный универсальным именем символа "\u2212", невозможно представить в текущей кодовой странице (1251)
+E:\things\VS\Projects\CM laba 1\CM laba 1.cpp(113,9): warning C4551: в вызове функции отсутствует список аргументов
+  CM laba 1.vcxproj -> E:\things\VS\Projects\CM laba 1\Debug\CM laba 1.exe

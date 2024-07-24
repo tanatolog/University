@@ -1,0 +1,16 @@
+E:\things\VS\Projects\SPO dk_automat\bin\Debug\net5.0\SPO dk_automat.exe
+E:\things\VS\Projects\SPO dk_automat\bin\Debug\net5.0\SPO dk_automat.deps.json
+E:\things\VS\Projects\SPO dk_automat\bin\Debug\net5.0\SPO dk_automat.runtimeconfig.json
+E:\things\VS\Projects\SPO dk_automat\bin\Debug\net5.0\SPO dk_automat.runtimeconfig.dev.json
+E:\things\VS\Projects\SPO dk_automat\bin\Debug\net5.0\SPO dk_automat.dll
+E:\things\VS\Projects\SPO dk_automat\bin\Debug\net5.0\ref\SPO dk_automat.dll
+E:\things\VS\Projects\SPO dk_automat\bin\Debug\net5.0\SPO dk_automat.pdb
+E:\things\VS\Projects\SPO dk_automat\obj\Debug\net5.0\SPO dk_automat.csproj.AssemblyReference.cache
+E:\things\VS\Projects\SPO dk_automat\obj\Debug\net5.0\SPO dk_automat.GeneratedMSBuildEditorConfig.editorconfig
+E:\things\VS\Projects\SPO dk_automat\obj\Debug\net5.0\SPO dk_automat.AssemblyInfoInputs.cache
+E:\things\VS\Projects\SPO dk_automat\obj\Debug\net5.0\SPO dk_automat.AssemblyInfo.cs
+E:\things\VS\Projects\SPO dk_automat\obj\Debug\net5.0\SPO dk_automat.csproj.CoreCompileInputs.cache
+E:\things\VS\Projects\SPO dk_automat\obj\Debug\net5.0\SPO dk_automat.dll
+E:\things\VS\Projects\SPO dk_automat\obj\Debug\net5.0\ref\SPO dk_automat.dll
+E:\things\VS\Projects\SPO dk_automat\obj\Debug\net5.0\SPO dk_automat.pdb
+E:\things\VS\Projects\SPO dk_automat\obj\Debug\net5.0\SPO dk_automat.genruntimeconfig.cache

@@ -1,0 +1,20 @@
+E:\things\VS\Projects\CGlaba1\bin\Debug\CGlaba1.exe.config
+E:\things\VS\Projects\CGlaba1\bin\Debug\CGlaba1.exe
+E:\things\VS\Projects\CGlaba1\bin\Debug\CGlaba1.pdb
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.csproj.AssemblyReference.cache
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.Form1.resources
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.Properties.Resources.resources
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.csproj.GenerateResource.cache
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.csproj.CoreCompileInputs.cache
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.exe
+E:\things\VS\Projects\CGlaba1\obj\Debug\CGlaba1.pdb
+E:\things\VS\Projects\CG laba 1\bin\Debug\CGlaba1.exe.config
+E:\things\VS\Projects\CG laba 1\bin\Debug\CGlaba1.exe
+E:\things\VS\Projects\CG laba 1\bin\Debug\CGlaba1.pdb
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.csproj.AssemblyReference.cache
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.Form1.resources
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.Properties.Resources.resources
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.csproj.GenerateResource.cache
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.csproj.CoreCompileInputs.cache
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.exe
+E:\things\VS\Projects\CG laba 1\obj\Debug\CGlaba1.pdb

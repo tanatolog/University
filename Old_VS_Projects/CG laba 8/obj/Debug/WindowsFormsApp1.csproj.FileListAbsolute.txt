@@ -1,0 +1,24 @@
+E:\things\VS\Projects\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+E:\things\VS\Projects\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\things\VS\Projects\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\things\VS\Projects\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+E:\things\VS\Projects\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\things\VS\Projects\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\things\VS\Projects\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\things\VS\Projects\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\things\VS\Projects\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+E:\things\VS\Projects\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+E:\things\VS\Projects\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\things\VS\Projects\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+e:\things\VS\Projects\CG laba 8\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+e:\things\VS\Projects\CG laba 8\obj\Debug\WindowsFormsApp1.Form1.resources
+e:\things\VS\Projects\CG laba 8\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+e:\things\VS\Projects\CG laba 8\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+e:\things\VS\Projects\CG laba 8\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+e:\things\VS\Projects\CG laba 8\obj\Debug\WindowsFormsApp1.exe
+e:\things\VS\Projects\CG laba 8\obj\Debug\WindowsFormsApp1.pdb
+e:\things\VS\Projects\CG laba 8\bin\Debug\WindowsFormsApp1.exe.config
+e:\things\VS\Projects\CG laba 8\bin\Debug\WindowsFormsApp1.exe
+e:\things\VS\Projects\CG laba 8\bin\Debug\WindowsFormsApp1.pdb
+e:\things\VS\Projects\CG laba 8\bin\Debug\System.Numerics.Vectors.dll
+e:\things\VS\Projects\CG laba 8\obj\Debug\WindowsFormsApp1.csproj.CopyComplete

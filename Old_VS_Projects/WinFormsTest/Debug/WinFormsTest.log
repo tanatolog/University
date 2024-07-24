@@ -1,0 +1,6 @@
+﻿  MyForm.cpp
+e:\things\VS\Projects\WinFormsTest\MyForm.cpp(7,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Создание кода...
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  WinFormsTest.vcxproj -> E:\things\VS\Projects\WinFormsTest\Debug\WinFormsTest.exe

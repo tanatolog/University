@@ -1,0 +1,10 @@
+﻿  Assembling Source.asm...
+Source.asm(96): warning A6004: procedure argument or local not referenced : a
+Source.asm(96): warning A6004: procedure argument or local not referenced : x1
+Source.asm(96): warning A6004: procedure argument or local not referenced : x2
+  pch.cpp
+  dllmain.cpp
+  MathLibrary.cpp
+  Создание кода...
+     Создается библиотека E:\things\VS\Projects\MathLibrary\Debug\MathLibrary.lib и объект E:\things\VS\Projects\MathLibrary\Debug\MathLibrary.exp
+  MathLibrary.vcxproj -> E:\things\VS\Projects\MathLibrary\Debug\MathLibrary.dll

@@ -1,0 +1,12 @@
+﻿  Compiling CUDA source file kernel.cu...
+  
+  E:\things\VS\Projects\TrigSolveCublas>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\include"  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o x64\Debug\kernel.cu.obj "E:\things\VS\Projects\TrigSolveCublas\kernel.cu" 
+  kernel.cu
+e:\things\vs\projects\trigsolvecublas\kernel.cu(62): warning C4477: "printf": в строке форматирования "%s" требуется аргумент типа "char *", но вариативный аргумент "1" имеет тип "int"
+e:\things\vs\projects\trigsolvecublas\kernel.cu(62): warning C4313: printf: конфликт "%s" в строке формата с аргументом 1 типа "int"
+e:\things\vs\projects\trigsolvecublas\kernel.cu(83): warning C4477: "printf": в строке форматирования "%s" требуется аргумент типа "char *", но вариативный аргумент "1" имеет тип "int"
+e:\things\vs\projects\trigsolvecublas\kernel.cu(83): warning C4313: printf: конфликт "%s" в строке формата с аргументом 1 типа "int"
+e:\things\vs\projects\trigsolvecublas\kernel.cu(104): warning C4477: "printf": в строке форматирования "%s" требуется аргумент типа "char *", но вариативный аргумент "1" имеет тип "int"
+e:\things\vs\projects\trigsolvecublas\kernel.cu(104): warning C4313: printf: конфликт "%s" в строке формата с аргументом 1 типа "int"
+     Создается библиотека E:\things\VS\Projects\TrigSolveCublas\x64\Debug\TrigSolveCublas.lib и объект E:\things\VS\Projects\TrigSolveCublas\x64\Debug\TrigSolveCublas.exp
+  TrigSolveCublas.vcxproj -> E:\things\VS\Projects\TrigSolveCublas\x64\Debug\TrigSolveCublas.exe
