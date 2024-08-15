@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="SearchDialog">
-		<item key="PREVIOUS_PAGE" value="org.eclipse.jdt.ui.JavaSearchPage"/>
+		<item key="PREVIOUS_PAGE" value="org.eclipse.mylyn.tasks.ui.search.page"/>
 	</section>
 	<section name="Search">
 		<list key="Search.processedPageIds">
@@ -24,7 +24,18 @@
 		<item key="DIALOG_X_ORIGIN" value="546"/>
 		<item key="DIALOG_Y_ORIGIN" value="237"/>
 		<item key="DIALOG_WIDTH" value="508"/>
-		<item key="DIALOG_HEIGHT" value="448"/>
+		<item key="DIALOG_HEIGHT" value="463"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="TextSearchPage">
+		<item key="CASE_SENSITIVE" value="false"/>
+		<item key="REG_EX_SEARCH" value="false"/>
+		<item key="WHOLE_WORD" value="false"/>
+		<item key="SEARCH_DERIVED" value="false"/>
+		<item key="SEARCH_IN_BINARIES" value="false"/>
+		<item key="HISTORY_SIZE" value="0"/>
+		<section name="EXTENSIONS">
+			<item key="0" value="*"/>
+		</section>
 	</section>
 </section>
