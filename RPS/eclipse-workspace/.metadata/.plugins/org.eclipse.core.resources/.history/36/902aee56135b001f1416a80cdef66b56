@@ -1,10 +1,8 @@
-// Class for handling integers within the range [-10000, 10000]
 public class SmallInteger {
-	private int value;											// Stores the value of the number
-	private static final int MAX_VALUE = 10000;					// Maximum allowable value
-	private static final int MIN_VALUE = -10000;				// Minimum allowable value
+	private int value;
+	private static final int MAX_VALUE = 10000;
+	private static final int MIN_VALUE = -10000;
 
-	// Primary constructor that accepts an integer and checks if it is within the valid range
 	public SmallInteger(int value) {
 		if (value > MAX_VALUE || value < MIN_VALUE) {
 			throw new RuntimeException("Value out of range");
@@ -12,39 +10,34 @@ public class SmallInteger {
 		this.value = value;
 	}
 
-	// Copy constructor that creates a new object based on an existing one
 	public SmallInteger(SmallInteger other) {
-		 this(other.value); 									// Calls the primary constructor
+		this.value = other.value;
 	}
 
-	// Method to add two SmallInteger objects
 	public SmallInteger add(SmallInteger arg) {
 		int result = this.value + arg.value;
 		if (result > MAX_VALUE || result < MIN_VALUE) {
-			throw new RuntimeException("Result out of range");
+			throw new RuntimeException("Value out of range");
 		}
 		return new SmallInteger(result);
 	}
 
-	// Method to subtract one SmallInteger object from another
 	public SmallInteger sub(SmallInteger arg) {
 		int result = this.value - arg.value;
 		if (result > MAX_VALUE || result < MIN_VALUE) {
-			throw new RuntimeException("Result out of range");
-		}
-		return new SmallInteger(result);
-	}
-	
-	// Method to multiply two SmallInteger objects
-	public SmallInteger mul(SmallInteger arg) {
-		int result = this.value * arg.value;
-		if (result > MAX_VALUE || result < MIN_VALUE) {
-			throw new RuntimeException("Result out of range");
+			throw new RuntimeException("Value out of range");
 		}
 		return new SmallInteger(result);
 	}
 
-	// Method for integer division of one SmallInteger object by another
+	public SmallInteger mul(SmallInteger arg) {
+		int result = this.value * arg.value;
+		if (result > MAX_VALUE || result < MIN_VALUE) {
+			throw new RuntimeException("Value out of range");
+		}
+		return new SmallInteger(result);
+	}
+
 	public SmallInteger integerDivision(SmallInteger arg) {
 		if (arg.value == 0) {
 			throw new ArithmeticException("Division by zero");
@@ -53,7 +46,6 @@ public class SmallInteger {
 		return new SmallInteger(result);
 	}
 
-	// Method to find the remainder of the division of one SmallInteger object by another
 	public SmallInteger remainderDivision(SmallInteger arg) {
 		if (arg.value == 0) {
 			throw new ArithmeticException("Division by zero");
@@ -61,9 +53,12 @@ public class SmallInteger {
 		int result = this.value % arg.value;
 		return new SmallInteger(result);
 	}
-	
-	// Method to get the current value
+
 	public int getValue() {
 		return this.value;
+	}
+
+	public String toString() {
+		return String.valueOf(this.value);
 	}
 }

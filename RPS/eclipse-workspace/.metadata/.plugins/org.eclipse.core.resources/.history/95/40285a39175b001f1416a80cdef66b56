@@ -1,5 +1,3 @@
-import java.util.*;								// for Scanner
-
 // Main class of the application, containing the entry point
 public class Main {
 
@@ -15,11 +13,11 @@ public class Main {
 
     // Method for user input with validation to ensure an integer is entered
     public static int input(Scanner s) {
-        while (s.hasNextInt() == false) {		// Continues to prompt the user until a valid integer is entered
+        while (s.hasNextInt() == false) {				// Continues to prompt the user until a valid integer is entered
             System.out.print("Введите целое число: ");
-            s.next();							// Skip the invalid input
+            s.next();									// Skip the invalid input
         }
-        return s.nextInt(); 					// Return the entered integer
+        return s.nextInt(); 							// Return the entered integer
     }
 
 	// Entry point of the application

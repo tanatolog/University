@@ -66,4 +66,8 @@ public class SmallInteger {
 	public int getValue() {
 		return this.value;
 	}
+
+	/*public String toString() {
+		return String.valueOf(this.value);
+	}*/
 }
