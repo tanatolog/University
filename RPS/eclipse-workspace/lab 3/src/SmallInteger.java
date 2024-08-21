@@ -28,7 +28,7 @@ public class SmallInteger {
      * @param other the SmallInteger object to copy
      */
     public SmallInteger(SmallInteger other) {
-        this(other.value); // Calls the primary constructor
+        this.value = other.value;
     }
 
     /**
