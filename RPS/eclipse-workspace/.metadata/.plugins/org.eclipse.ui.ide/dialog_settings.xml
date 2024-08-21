@@ -18,8 +18,6 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="E:\things\Git\University\RPS\eclipse-workspace\lab_3"/>
-			<item value="E:\things\Git\University\RPS\eclipse-workspace\lab_1"/>
 			<item value="E:\things\Git\University\RPS\eclipse-workspace\RPS lab 1"/>
 			<item value="E:\things\Git\University\RPS\lab 1"/>
 			<item value="C:\Users\User\Desktop\eclipse-workspace\eclipse test"/>
@@ -40,12 +38,5 @@
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.jdt.ui.java"/>
 		</list>
-	</section>
-	<section name="SaveAsDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="706"/>
-		<item key="DIALOG_Y_ORIGIN" value="142"/>
-		<item key="DIALOG_WIDTH" value="525"/>
-		<item key="DIALOG_HEIGHT" value="580"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>
