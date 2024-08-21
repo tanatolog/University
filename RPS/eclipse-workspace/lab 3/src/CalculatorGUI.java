@@ -202,7 +202,10 @@ public class CalculatorGUI extends JFrame {
 		}
 
 		private void handleNumberButtons(ActionEvent e, String line) {
-			if ((e.getSource() == zeroButton) && (!line.equals("0"))) {
+			if (line.equals("0")) {
+				line = "";
+			}
+			if (e.getSource() == zeroButton) {
 				inputField.setText(line + "0");
 				
 			} else if (e.getSource() == oneButton) {
@@ -239,7 +242,7 @@ public class CalculatorGUI extends JFrame {
 		 * Function for action on operation button's press
 		 */
 		private void operationButtons(byte operation, String line, String operationSign) {
-			if (line.length() != 0) {
+			if (operationCounter == 0) {
 				label = label + line + operationSign;
 				outputField.setText(label);
 				operationCounter = operation;
