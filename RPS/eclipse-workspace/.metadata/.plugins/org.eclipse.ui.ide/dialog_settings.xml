@@ -7,11 +7,33 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+<<<<<<< HEAD
 			<item value="E:\things\Git\University\RPS\eclipse-workspace\eclipse test"/>
 			<item value="E:\things\Git\University\RPS\eclipse-workspace\lab_1"/>
+=======
+			<item value="E:\things\Git\University\RPS\eclipse-workspace\RPS lab 1"/>
+			<item value="E:\things\Git\University\RPS\lab 1"/>
+			<item value="C:\Users\User\Desktop\eclipse-workspace\eclipse test"/>
+			<item value="C:\Users\User\Desktop\eclipse-workspace\DPS laba 1"/>
+			<item value="C:\Users\User\Desktop\eclipse-workspace"/>
+>>>>>>> parent of 3f68455 (RPS lab 3 added)
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
 	</section>
+<<<<<<< HEAD
+=======
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="676"/>
+		<item key="DIALOG_Y_ORIGIN" value="328"/>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+		</list>
+	</section>
+>>>>>>> parent of 3f68455 (RPS lab 3 added)
 </section>
