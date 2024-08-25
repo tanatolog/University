@@ -14,66 +14,67 @@ def inputInt():
 if __name__ == '__main__':
     while True:
         print()
-        print("Выберте действие:")
-        print("1. Генерация случайного просто числа")
+        print("Выберите действие:")
+        print("1. Генерация случайного простого числа")
         print("2. Генерация массива из простых чисел")
         print("3. Проверка числа на простоту")
         print("4. Разложение на простые множители")
         print("5. Выход")
 
-        x = inputInt()
+        command = inputInt()
     
-        if (x == None) or (5 < x < 1):
+        if (command == None) or (5 < command < 1):
             continue
         
-        if x == 1:
+        if command == 1:
             print(get_random_prime())
 
-        elif x == 2:
+        elif command == 2:
             while True:
                 print("Введите размер массива")
-                t = inputInt()
+                value = inputInt()
 
-                if t == None:
+                if value == None:
                     continue
 
-                if (t <= 0) or (t > 50):
+                if (value <= 0) or (value > 50):
                     print("Недопустимый размер массива")
                 else:
-                    print(generate_primes(t))
+                    result = generate_primes(value)
+                    print(result)
 
                 break
 
-        elif x == 3:
+        elif command == 3:
             while True:
                 print("Введите неотрицательное целое число")
-                t = inputInt()
+                value = inputInt()
 
-                if t == None:
+                if value == None:
                     continue
                 
-                if t == 1 or t == 0:
+                if value == 1 or value == 0:
                     print("Число не является ни простым ни составным")
                 else:
-                    print("Число простое" if is_prime(t) else "Число составное")
+                    print("Число простое" if is_prime(value) else "Число составное")
 
                 break
 
-        elif x == 4:
+        elif command == 4:
             while True:
                 print("Введите неотрицательное целое число")
-                t = inputInt()
+                value = inputInt()
 
-                if t == None:
+                if value == None:
                     continue
 
-                if t == 1 or t == 0:
-                    print("Число не является ни простым ни составным")
+                if value == 1 or value == 0:
+                    print("Число не является ни простым, ни составным")
                 else:
-                    r = prime_factorization(t)
-                    print(f"Простые множители: {*r,}")
+                    result = prime_factorization(value)
+                    print(f"Простые множители: {*result,}")
 
                 break
 
-        elif x == 5:
+        elif command == 5:
             break

@@ -6,7 +6,7 @@ def is_prime(n): # optimized trial division with 6k optimization
     if n <= 1: # numbers less than or equal to 1 are not prime
         return False
     
-    if n <= 3: # 2 and 3 is prime
+    if n <= 3: # 2 and 3 are prime
         return True
     
     if (n % 2 == 0) or (n % 3 == 0): # exclude even numbers and numbers divisible by 3
@@ -29,5 +29,6 @@ get_random_prime = lambda: get_next(random.randint(2, MAX_PRIME))
 def generate_primes(size):
     primes = []
     while len(primes) < size:
-        get_random_prime()
+        prime = get_random_prime()
+        primes.append(prime)
     return primes
