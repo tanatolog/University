@@ -3,8 +3,16 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# My custom ignore settings
+## My custom ignore settings
+
+# Eclipse
 /.metadata/
+
+# Python
+/.venv/
+/_pycache_/
+
+##
 
 # User-specific files
 *.rsuser
