@@ -6,14 +6,14 @@
 ## My custom ignore settings
 
 # Eclipse
-/.metadata/
+.metadata/
 
 # Python
-/.venv/
-/_pycache_/
+.venv/
+_pycache_/
 
 # Subversion
-/.svn/
+.svn/
 
 ##
 
