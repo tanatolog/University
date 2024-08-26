@@ -26,7 +26,7 @@ get_next = lambda i: get_next(i + 1) if not is_prime(i + 1) else i + 1 # find th
 
 get_random_prime = lambda: get_next(random.randint(2, MAX_PRIME))
 
-def generate_primes(size):
+def generate_primes(size): # generating an array of prime numbers
     primes = []
     while len(primes) < size:
         prime = get_random_prime()
