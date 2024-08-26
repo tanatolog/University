@@ -1,6 +1,6 @@
 import random
 
-MAX_PRIME = 999999937
+MAX_PRIME = 999999997
 
 def is_prime(n): # optimized trial division with 6k optimization
     if n <= 1: # numbers less than or equal to 1 are not prime
@@ -20,9 +20,9 @@ def is_prime(n): # optimized trial division with 6k optimization
 
 prime_factorization = lambda num, k = 2: [num] if is_prime(num) else [k] + prime_factorization(num // k, k) if num % k == 0 else prime_factorization(num, k + 1)
 
-get_next = lambda i: get_next(i + 1) if not is_prime(i + 1) else i + 1 # find the next prime number
+next_prime = lambda i: next_prime(i + 1) if not is_prime(i + 1) else i + 1 # find the next prime number
 
-get_random_prime = lambda: get_next(random.randint(2, MAX_PRIME - 1))
+get_random_prime = lambda: next_prime(random.randint(2, MAX_PRIME - 1))
 
 def generate_primes(size): # generating an array of prime numbers
     primes = []
