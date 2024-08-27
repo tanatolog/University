@@ -48,7 +48,7 @@ class Controller:
                 if char in value:
                     return None
 
-            if value == '':
+            if (value == '') or (len(value) > 50):
                 return None
             
             return value
