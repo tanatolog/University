@@ -1,6 +1,6 @@
 import random
 
-MAX_PRIME = 999999997
+MAX_PRIME = 999999937
 
 def is_prime(n): # optimized trial division with 6k optimization
     if n <= 1: # numbers less than or equal to 1 are not prime
@@ -9,6 +9,8 @@ def is_prime(n): # optimized trial division with 6k optimization
         return True
     if n % 2 == 0 or n % 3 == 0: # exclude even numbers and numbers divisible by 3
         return False
+    if n > MAX_PRIME:
+        raise Exception('obtained a number exceeding the MAX_PRIME')
     
     i = 5 # check the divisors from 5 to sqrt(n) in increments of 6
     while i * i <= n:

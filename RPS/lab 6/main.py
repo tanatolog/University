@@ -55,6 +55,8 @@ if __name__ == '__main__':
                 
                 if value == 1 or value == 0:
                     print("Число не является ни простым ни составным")
+                elif value > MAX_PRIME:
+                    print("Вы ввели слишком большое число")
                 else:
                     print("Число простое" if is_prime(value) else "Число составное")
 
@@ -70,6 +72,8 @@ if __name__ == '__main__':
 
                 if value == 1 or value == 0:
                     print("Число не является ни простым, ни составным")
+                elif value > MAX_PRIME:
+                    print("Вы ввели слишком большое число")
                 else:
                     result = prime_factorization(value)
                     print(f"Простые множители: {*result,}")

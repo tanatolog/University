@@ -22,7 +22,11 @@ class Controller:
         if v == 1 or v == 0:
             self.views.show_result(0, "Число не является ни простым ни составным")
         else:
-            self.views.show_result(0, "Число простое" if self.prime.is_prime(v) else "Число составное")
+            try:
+                self.views.show_result(0, "Число простое" if self.prime.is_prime(v) else "Число составное")
+            except Exception:
+                self.views.show_result(0, "Вы ввели слишком большое число")
+
 
     def prime_factorization(self, value):
         v = self.int_conversion(value)
@@ -34,11 +38,15 @@ class Controller:
         if v == 1 or v == 0:
             self.views.show_result(0, "Число не является ни простым ни составным")
         else:
-            r = self.prime.prime_factorization(v)
-            self.views.show_result(0, f"Простые множители: {*r,}" if len(r) > 1 else "Это простое число")
+            try:
+                r = self.prime.prime_factorization(v)
+                self.views.show_result(0, f"Простые множители: {*r,}" if len(r) > 1 else "Это простое число")
+            except Exception:
+                self.views.show_result(0, "Вы ввели слишком большое число")
 
     def get_random_prime(self):
         self.views.set_input_value(self.prime.get_random_prime())
+
 
     def file_name_valid(self, value):
         """determines whether the file name is valid"""
