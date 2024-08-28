@@ -1,5 +1,4 @@
 import xmlrpc.client
-import socket
 
 class Model:
     def __init__(self):

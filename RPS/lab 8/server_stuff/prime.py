@@ -1,6 +1,4 @@
 import random
-import sys
-sys.setrecursionlimit(2000)
 
 MAX_PRIME = 999999937
 
@@ -23,16 +21,19 @@ def is_prime(n): # optimized trial division with 6k optimization
 
     return True
 
-def prime_factorization_int(num):
+def prime_factorization_int(num, k=2):
     factors = []
-    k = 2
-
+    
     while num > 1:
-        while num % k == 0:
+        if is_prime(num):
+            factors.append(num)
+            break
+        elif num % k == 0:
             factors.append(k)
             num //= k
-        k += 1
-
+        else:
+            k += 1
+    
     return factors
 
 #prime_factorization_int = lambda num, k = 2: [] if num == 1 else [num] if is_prime(num) else [k] + prime_factorization(num // k, k) if num % k == 0 else prime_factorization(num, k + 1)
