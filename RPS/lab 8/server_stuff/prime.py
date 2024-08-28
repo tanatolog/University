@@ -35,6 +35,8 @@ def prime_factorization_int(num):
 
     return factors
 
+#prime_factorization_int = lambda num, k = 2: [] if num == 1 else [num] if is_prime(num) else [k] + prime_factorization(num // k, k) if num % k == 0 else prime_factorization(num, k + 1)
+
 def prime_factorization(n):
     n = int(n)
     return ' '.join(str(x) for x in prime_factorization_int(n))
@@ -48,9 +50,11 @@ def next_prime(i):  # find the next prime number
 get_random_prime = lambda: str(next_prime(random.randint(2, MAX_PRIME - 1)))
 
 def generate_primes(size): # generating an array of prime numbers
-    n = int(size)
+    s = int(size)
     primes = []
-    while len(primes) < size:
+    while len(primes) < s:
         prime = get_random_prime()
         primes.append(prime)
     return ' '.join(str(x) for x in primes)
+
+

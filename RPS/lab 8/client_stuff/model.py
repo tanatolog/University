@@ -11,7 +11,7 @@ class Model:
 
     def _get_rpc(self):
         """checking the connection to the server"""
-        serv = xmlrpc.client.ServerProxy("http://localhost:8000/")
+        serv = xmlrpc.client.ServerProxy("http://localhost:8888/")
         try:
             serv._()   # call a fictive method.
         except xmlrpc.client.Fault:
@@ -24,6 +24,6 @@ class Model:
 
     # Methods for working with the server
     is_prime = lambda self, x: self.server.is_prime(str(x))
-    prime_factorization = lambda self, n: self.prime_factorization(str(n))
-    get_random_prime = lambda self: self.get_random_prime()
+    prime_factorization = lambda self, n: self.server.prime_factorization(str(n))
+    get_random_prime = lambda self: self.server.get_random_prime()
     generate_primes = lambda self, n: self.server.generate_primes(str(n))

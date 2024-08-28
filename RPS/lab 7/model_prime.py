@@ -20,7 +20,7 @@ def is_prime(n): # optimized trial division with 6k optimization
 
     return True
 
-prime_factorization = lambda num, k = 2: [num] if is_prime(num) else [k] + prime_factorization(num // k, k) if num % k == 0 else prime_factorization(num, k + 1)
+prime_factorization = lambda num, k = 2: [] if num == 1 else [num] if is_prime(num) else [k] + prime_factorization(num // k, k) if num % k == 0 else prime_factorization(num, k + 1)
 
 next_prime = lambda i: next_prime(i + 1) if not is_prime(i + 1) else i + 1 # find the next prime number
 

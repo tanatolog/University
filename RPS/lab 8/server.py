@@ -2,8 +2,8 @@ from xmlrpc.server import SimpleXMLRPCServer
 import server_stuff.prime as prime
 
 def main():
-    server = SimpleXMLRPCServer(("localhost", 8000))
-    print("Listening on port 8000...")
+    server = SimpleXMLRPCServer(("localhost", 8888))
+    print("Listening on port 8888...")
 
     server.register_function(prime.is_prime, "is_prime")
     server.register_function(prime.prime_factorization, "prime_factorization")
