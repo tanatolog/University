@@ -1,34 +1,30 @@
 from time import time
-from fast_factorize import factorize
-import sys
+from fast_factorize import primeFactorize
+from prime import *
 
-sys.setrecursionlimit(2000)
+def speed_test(size):
+    print(f'Starting a {size} test:')
+    data = generate_primes(size)
+
+    start = time()
+    for v in data:
+        prime_factorize(v)
+    duration = time() - start
+    print(f"[Python]: {time() - start}")
+
+    start = time()
+    for v in data:
+        primeFactorize(v)
+    duration = time() - start
+    print(f"[C++]: {time() - start}") 
+
 
 def main():
-    data = [21990232406568, 219982384065688, 2199882324665688, 219988232466568884]
-
-    def fact(n):
-        i = 2
-        prims = []
-        while i * i <= n:
-            while n % i == 0:
-                prims.append(i)
-                n /= i
-
-            i += 1
-        if n > 1:
-            prims.append(n)
-        return prims
-    
-    for i, v in enumerate(data):
-        print(i+1)
-        start = time()
-        rp = fact(v)
-        duration = time() - start
-        print(f"[Python]: {time() - start}")      
-
-        r = factorize(v)
-        print()
+    speed_test(10)
+    speed_test(50)
+    speed_test(100)
+    speed_test(150)
+    speed_test(200)
         
 
 if __name__ == "__main__":
