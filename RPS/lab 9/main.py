@@ -21,10 +21,6 @@ def speed_test(size):
 
 def main():
     speed_test(10)
-    speed_test(50)
-    speed_test(100)
-    speed_test(150)
-    speed_test(200)
         
 
 if __name__ == "__main__":
