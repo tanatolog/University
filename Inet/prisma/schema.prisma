@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Blog {
+  id        Int      @id @default(autoincrement())
+  title     String   @db.VarChar(255)
+  text   String?
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  userId  Int
+  User      User     @relation(fields: [userId], references: [id])
+  comments    Comment[]
+  del Boolean  @default(false)
+  ban Int @default(0)
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  text   String?
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  userId  Int
+  User      User     @relation(fields: [userId], references: [id])
+  blogId Int
+  blog  Blog @relation(fields: [blogId], references: [id])
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  text   String?
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  userId  Int
+  User      User     @relation(fields: [userId], references: [id])
+  chatId Int
+  chat  Chat @relation(fields: [chatId], references: [id])
+}
+
+model Subscriptions {
+  id        Int      @id @default(autoincrement())
+  del Boolean  @default(false)
+  subId  Int
+  subscriber      User     @relation(name: "Sub", fields: [subId], references: [id])
+  userId  Int
+  user      User     @relation(name: "User", fields: [userId], references: [id])
+}
+
+model Chat {
+  id     Int     @id @default(autoincrement())
+  name    String  @db.VarChar(255)
+  type  Int  @default(0)
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  users UsersInChat[]
+  messages Message[]
+}
+
+model UsersInChat {
+  unread  Int  @default(0)
+  userId  Int
+  user      User     @relation(fields: [userId], references: [id])
+  chatId  Int
+  chat      Chat     @relation(fields: [chatId], references: [id])
+  @@id([userId, chatId])
+}
+
+model User {
+  id      Int      @id @default(autoincrement())
+  login    String  @db.VarChar(255)
+  mail   String   @unique @db.VarChar(255)
+  password String @db.VarChar(255)
+  token String @db.VarChar(255)
+  blogs    Blog[]
+  comments    Comment[]
+  chats UsersInChat[]
+  subscribers Subscriptions[]  @relation("User")
+  subscriptions  Subscriptions[]  @relation("Sub")
+  messages Message[]
+  Admin Boolean @default(true)
+  del Boolean  @default(false)
+  ban Int @default(0)
+}

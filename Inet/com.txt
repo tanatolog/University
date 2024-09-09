@@ -1,0 +1,4 @@
+./../node_modules/.bin/ts-node .\index.ts        #start
+./../node_modules/.bin/eslint .\ts\router.ts --fix         #check
+npm i --save-dev @tinkoff/eslint-config
+.\node_modules\.bin\ts-node .\ts\index.ts #start

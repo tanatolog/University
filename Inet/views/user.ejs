@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href="/offcanvas.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="/script_login.js"></script> 
+  <script>document.addEventListener('DOMContentLoaded', page_loading);</script>
+</head>
+
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  .my-padding {
+    padding: 8px;
+    margin: 8px;
+    margin-left: 0px;
+    display:block;
+    width: 100%;
+  }
+
+  .test-truncate {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+
+  .mi-size {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+</style>
+
+<body>
+  
+
+
+  <header class="py-3 mb-3 border-bottom bg-dark style="">
+    <div class="container text-center d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+      <a class="d-flex align-items-center" href="/">
+        <img class="align-baseline" src="https://revenuearchitects.com/wp-content/uploads/2017/02/Blog_pic.png" height="62">
+      </a>
+
+      <div class="d-flex align-items-center">
+        <form class="w-100 me-3">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+        
+        <ul class="navbar-nav ms-auto" id="ul-nav">
+          <li class="nav-item" id="delete">
+            <a class="nav-link btn btn-outline-success" me href="#enter" id="nav_enter" role="button" data-bs-toggle="modal"
+              aria-expanded="false">
+              -Вход-
+            </a>
+          </li>
+        </ul>
+
+        <div class="flex-shrink-0 dropdown" id="user_name_main">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://kartinki.pics/uploads/posts/2022-03/thumbs/1646961318_2-kartinkin-net-p-kartinki-dlya-profilya-stim-2.jpg" class="rounded-circle img-fluid me-3" alt="Аватар" height="70" width="70">
+          </a>
+          <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" style="">
+            <li><a class="dropdown-item" id="user_name" href="/user">User</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" onclick="logout()">Выйти</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<!-- Модальное окно -->
+<div class="modal fade" id="enter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <ul class="nav nav-tabs">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="enter-tab" data-bs-toggle="pill" data-bs-target="#enter-panel"
+              type="button" role="tab" aria-controls="enter-pills" aria-selected="true">Войти</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="sign-tab" data-bs-toggle="pill" data-bs-target="#sign-panel" type="button"
+              role="tab" aria-controls="sign-pills" aria-selected="false">Зарегистрироваться</button>
+          </li>
+
+        </ul>
+        <div class="tab-content mt-3">
+          <div class="tab-pane fade show active" id="enter-panel" role="tabpanel" aria-labelledby="enter-tab">
+
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput" id="label_email">Email/Номер телефона</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword" id="label_password">Пароль</label>
+            </div>
+            <div class="text-start pass_warning" id="pass_warning">
+            </div>
+            <a class="text-start" href="#">
+              Восстановить пароль
+            </a>
+            <div class="row p-3">
+            <button type="button" class="btn btn-outline-success" onclick="autorization()">Войти</button>
+          </div>
+          </div>
+          <div class="tab-pane" id="sign-panel" role="tabpanel" aria-labelledby="sign-tab">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="sign-name" placeholder="name" >
+              <label for="floatingInput" id="label_sign_email">Имя*</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="sign-email" placeholder="name@example.com">
+              <label for="floatingInput" id="label_sign_email">Email/Номер телефона*</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="sign-password" placeholder="Password">
+              <label for="floatingPassword" id="label_sign_password">Пароль*</label>
+            </div>
+            <div class="form-floating ">
+              <input type="password" class="form-control" id="sign-password2" placeholder="Password">
+              <label for="floatingPassword" id="label_sign_password">Повторите пароль*</label>
+            </div>
+            <div class="text-start" id="pass_sign_warning">
+            </div>
+            <div class="row p-3">
+            <button type="button" onclick="registration()" class="btn btn-outline-success">Зарегистрироваться</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Модальное окно -->
+
+
+<!-- Главная часть -->
+<div class="container">
+  <div class="row row-offcanvas row-offcanvas-left main-offcanvas nopadding" id="body">
+    <div class="col-3 not-hidden-offcanvas"></div>
+
+    <div class="col-3 col-md-3 sidebar-offcanvas" id="sidebar" style="">
+
+      <div class="position-sticky hidden-offcanvas position-fixed" style="top: 2rem;" id="side">
+        <div class="list-group">
+          <a href="/" class="list-group-item">Главная</a>
+          <% if(typeof me.uid != 'undefined') { %>
+            <div id="for-login">
+              <a href="/user" class="list-group-item">Моя страница</a>
+              <a href="/subs" class="list-group-item">Мои подписки</a>
+              <a href="/chats" class="list-group-item">Чаты</a>
+            </div>
+            <% } %>
+          <button type="button" class="btn btn-primary btn-xs not-hidden-offcanvas" data-toggle="offcanvas" id="sliderback"><<</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-9">
+      <!-- Тут изменять -->
+    <div class="row g-5">
+
+      <div class="col-12 col-xl-3 order-1 order-xl-2">
+
+       
+          <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 bg-light rounded">
+              <h2 class="fst-italic"><%= user.login %></h2>
+              <img src="/icons/user.gif" class="rounded-circle img-fluid me-3 mi-size" alt="Аватар">
+              <% if(myPage == false && typeof me != 'undefined') { %>
+                <% if(hasChat) { %>
+                  <a href="/chat?cid=<%=chat%>" class="btn btn-outline-success my-padding">Чат</a>
+                <% } else { %>  
+                  <button type="button" id="button-send" class="btn btn-outline-success my-padding">Добавить чат</button>
+                <% } %>
+                <% if(me.role == "true" && user.del==false) { %>
+                  <button type="button" id="deluser"class="btn btn-outline-success my-padding">Заблокировать</a>
+                <% } %>  
+                <% if(sub == true) { %>
+                  <button type="button" id="button-del" class="btn btn-outline-success my-padding">Удалить из подписок</button>
+                <% } else { %>  
+                  <button type="button" id="button-sub" class="btn btn-outline-success my-padding">Подписаться</button>
+                <% } %>
+                
+              <% } %>  
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="col-12 col-xl-9 order-2 order-xl-1">
+          <h3>Записи</h3>
+          <ul class="list-unstyled mb-0">
+            <% if (user.blogs.length > 0) { %>
+              
+
+            <% user.blogs.forEach(blog => { %>
+              <% if (blog.del==false) { %> 
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col col-lg-8 p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary test-truncate"><%= blog.login %></strong> 
+                  <div class="trancate-text-place">
+                    <h3 class="card-text mb-auto test-truncate"><%= blog.title %></h3>
+                  </div>
+                  <div class="mb-1 text-muted">
+                    <%= new Intl.DateTimeFormat('en-GB', { year: '2-digit', month: '2-digit', day: '2-digit' }).format(blog.date) %>
+                  </div>
+                  <p class="card-text mb-auto"></p>
+                  <a href="/blog?id=<%=blog.id%>" class="text-reset fw-bold">Читать</a>
+                </div>
+                <div class="col-auto col-lg-4 d-none d-lg-block mx-auto text-end">
+                  <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Эскиз" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Эскиз</text></svg> -->
+                  <img class="bd-placeholder-img" src="/icons/<%= blog.id % 5 + 1%>.gif" width="200" height="250">
+                </div>
+              </div>
+              <% }%>
+            <% }) %>
+
+            <% } else { %>
+              <h5 class="text-center">Почему-то тут пусто...</h5>
+      
+            <% } %>
+  
+          </ul>
+          
+        </div>
+      </div>
+
+
+      <button type="button" class="btn btn-primary btn-xs hidden-btn" data-toggle="offcanvas" id="slider">>></button>
+    </div>
+  </div>
+</div>
+ <!-- body -->
+
+ <script>
+  (function() {
+        const sendBtn = document.getElementById("slider");
+        const sliderback = document.getElementById("sliderback");
+        const menu = document.getElementById("body");
+        const side = document.getElementById("side");
+
+
+        sendBtn.onclick = function() {
+          menu.classList.add("active");
+          side.classList.remove('hidden-offcanvas');
+          sendBtn.classList.add('hidden-offcanvas');
+          sliderback.classList.remove('hidden-offcanvas');
+        }
+
+      sliderback.onclick = function() {
+          menu.classList.remove("active");
+          side.classList.add('hidden-offcanvas');
+          sendBtn.classList.remove('hidden-offcanvas');
+          sliderback.classList.add('hidden-offcanvas');
+      }
+  })();
+  </script>
+
+    <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <div class="container-fluid p-3">
+      <div class="row">
+        <div class="col px-lg-5">
+          <a id="help" href="" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: rgb(119, 119, 119);">
+            Обратиться в поддержку
+          </a>
+        </div>
+        <div class="col text-end">
+          © 2023 Copyright:
+          <a class="text-reset fw-bold" href="/">chto-to.ru</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <!-- Footer -->
+</body>
+
+<% if(myPage == false && typeof me != 'undefined') { %>
+  <% if(!hasChat) { %>
+  <script>
+    (function() {
+        const sendBtn = document.getElementById("button-send");
+  
+        function getCookie(name) {
+            let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+  
+        sendBtn.onclick = function() {
+        if (getCookie("in-system") == "true") {
+          sendBtn.disabled = true;
+          let text = JSON.stringify({user: <%= user.id %>});
+          let request = new XMLHttpRequest();
+          request.open("POST", "/chat/add", true);  
+          request.setRequestHeader("Content-Type", "application/json");
+          request.addEventListener("load", function () {
+          let ans = JSON.parse(request.response);
+                    //if (typeof(ans.id) == INT)
+          if (request.response) {
+            window.location.replace("/chat?cid=" + ans.id);
+          }
+          //console.log(ans);
+        });
+        request.send(text);
+      }
+    }
+  })();
+  </script>
+  <% } %>  
+  <script>
+    (function() {
+        const delBtn = document.getElementById("deluser");
+  
+        function getCookie(name) {
+            let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+  
+        delBtn.onclick = function() {
+        if (getCookie("in-system") == "true") {
+          delBtn.disabled = true;
+          let text = JSON.stringify({user: <%= user.id %>});
+          let request = new XMLHttpRequest();
+          request.open("POST", "/user/del", true);  
+          request.setRequestHeader("Content-Type", "application/json");
+          request.addEventListener("load", function () {
+          window.location.replace("blogs");
+          })
+          request.send(text);
+          window.location.replace("blogs");
+        };
+        window.location.replace("blogs");
+       
+      }
+    }
+  )();
+  </script>
+    <script>
+      (function() {
+
+          <% if(sub == false) { %>
+            const subBtn = document.getElementById("button-sub");
+          <% } else { %>
+            const subBtn = document.getElementById("button-del"); 
+          <% } %>
+          
+          function getCookie(name) {
+              let matches = document.cookie.match(new RegExp(
+              "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+              ));
+              return matches ? decodeURIComponent(matches[1]) : undefined;
+          }
+    
+          subBtn.onclick = function() {
+          if (getCookie("in-system") == "true") {
+            subBtn.disabled = true;
+            let text = JSON.stringify({user: <%= user.id %>});
+            let request = new XMLHttpRequest();
+            <% if(sub == false) { %>
+              request.open("POST", "/sub/add", true);  
+            <% } else { %>
+              request.open("POST", "/sub/delete", true); 
+            <% } %>
+            request.setRequestHeader("Content-Type", "application/json");
+            request.addEventListener("load", function () {
+                      //if (typeof(ans.id) == INT)
+            window.location.reload();
+          });
+          request.send(text);
+        }
+      }
+    })();
+    </script>
+   
+  <% } %>
+
+</html>
