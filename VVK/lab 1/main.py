@@ -1,12 +1,12 @@
 from math import factorial as fact
 
-p_proc = 0.965
-p_mem = 0.96
-p_io = 0.88
+p_proc = 0.96
+p_mem = 0.95
+p_io = 0.905
 
-n_cpu = 1   #number cpus in one line
-n_mem = 8   #number mems in one line
-n_io = 4    #number ios in one line
+n_cpu = 2   #number cpus in one line
+n_mem = 7   #number mems in one line
+n_io = 5    #number ios in one line
 
 t4_reserve_mem = 1
 t4_reserve_io = 1
@@ -40,4 +40,4 @@ task5 = p_proc ** 2 * R(n_mem, n_mem + t5_reserve_mem, p_mem) * R(n_io, n_io + t
 
 task6 = p_proc ** 2 * R(n_mem, n_mem + n_mem, p_mem) * R(n_io, n_io + n_io, p_io)
 
-print(round(task6, 6))
+print(round(0.99989/10, 6))
