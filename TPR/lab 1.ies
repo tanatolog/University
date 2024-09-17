@@ -1,5 +1,5 @@
-{\rtf1\fbidis\ansi\ansicpg1251\deff0\deflang1049{\fonttbl{\f0\fnil\fcharset204 MS Sans Serif;}{\f1\fswiss\fprq2\fcharset204 Calibri;}{\f2\fswiss\fprq2\fcharset204 Tahoma;}}
-\viewkind4\uc1\pard\ltrpar\f0\fs16\'c3\'c8\'cf\'ce\'d2\'c5\'c7\'db:
+{\rtf1\ansi\ansicpg1251\deff0\deflang1049{\fonttbl{\f0\fnil\fcharset204 MS Sans Serif;}{\f1\fswiss\fprq2\fcharset204 Calibri;}{\f2\fswiss\fprq2\fcharset204 Tahoma;}}
+\viewkind4\uc1\pard\f0\fs16\'c3\'c8\'cf\'ce\'d2\'c5\'c7\'db:
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \{\'d0\'ee\'f1\'f1\'e8\'ff, \'d1\'d8\'c0, \'ca\'e8\'f2\'e0\'e9, \'c8\'ed\'e4\'e8\'ff, \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff, \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff, \'c3\'e0\'e8\'f2\'e8, \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed\}
 \par 
 \par \'cf\'c0\'d0\'c0\'cc\'c5\'d2\'d0\'db:
@@ -13,7 +13,7 @@
 \par 
 \par \'cf\'c5\'d0\'c5\'cc\'c5\'cd\'cd\'db\'c5:
 \par 
-\par \pard\ltrpar\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 1
+\par \pard\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 1
 \par IF  \'d7\'e8\'f1\'eb\'e5\'ed\'ed\'ee\'f1\'f2\'fc_\'ed\'e0\'f1\'e5\'eb\'e5\'ed\'e8\'ff \'ed\'e8\'e7\'ea\'e0\'ff 
 \par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,9],
@@ -100,19 +100,19 @@
 \par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [0,9]
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,9]
 \par ELSE \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,9]
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [0,3]
 \par END
 \par 
 \par NAME 6
@@ -120,26 +120,26 @@
 \par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,6],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,6],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,9]
-\par ELSE \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [0,3],
+\par ELSE \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [0,9]
 \par END
-\par \pard\ltrpar\kerning0\f2\fs16 
-\par \pard\ltrpar\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 7
+\par \pard\kerning0\f2\fs16 
+\par \pard\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 7
 \par IF \'ca\'eb\'e8\'ec\'e0\'f2 \'f5\'ee\'eb\'ee\'e4\'ed\'fb\'e9
 \par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,6],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [0,9],
@@ -157,14 +157,14 @@
 \par 
 \par NAME 8
 \par IF \'ca\'eb\'e8\'ec\'e0\'f2 \'f3\'ec\'e5\'f0\'e5\'ed\'ed\'fb\'e9
-\par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,3],
+\par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,6],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,3]
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,9]
 \par ELSE \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,9],
@@ -194,8 +194,8 @@
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,9]
 \par END
-\par \pard\ltrpar\kerning0\f2\fs16 
-\par \pard\ltrpar\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 10
+\par \pard\kerning0\f2\fs16 
+\par \pard\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 10
 \par IF \'d2\'f3\'f0\'e8\'e7\'ec \'f5\'ee\'f0\'ee\'f8\'ee_\'f0\'e0\'e7\'e2\'e8\'f2
 \par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,5],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,9],
@@ -317,18 +317,18 @@
 \par 
 \par NAME 16
 \par IF \'ca\'e0\'f7\'e5\'f1\'f2\'e2\'ee_\'ee\'e1\'f0\'e0\'e7\'ee\'e2\'e0\'ed\'e8\'ff \'ed\'e8\'e7\'ea\'ee\'e5
-\par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [0,3],
+\par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [0,9]
-\par ELSE \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,3],
+\par ELSE \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,9],
@@ -338,29 +338,29 @@
 \par NAME 17
 \par IF \'ca\'e0\'f7\'e5\'f1\'f2\'e2\'ee_\'ee\'e1\'f0\'e0\'e7\'ee\'e2\'e0\'ed\'e8\'ff \'f1\'f0\'e5\'e4\'ed\'e5\'e5
 \par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,3]
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,9]
 \par ELSE \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,3]
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [0,3]
 \par END
 \par 
 \par NAME 18
 \par IF \'ca\'e0\'f7\'e5\'f1\'f2\'e2\'ee_\'ee\'e1\'f0\'e0\'e7\'ee\'e2\'e0\'ed\'e8\'ff \'e2\'fb\'f1\'ee\'ea\'ee\'e5
-\par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,3],
+\par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,6],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,6],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,9],
@@ -371,11 +371,11 @@
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [0,3],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,3],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,3]
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [0,3],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [0,3]
 \par END
-\par \pard\ltrpar\kerning0\f2\fs16 
-\par \pard\ltrpar\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 19
+\par \pard\kerning0\f2\fs16 
+\par \pard\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 19
 \par IF \'ca\'e0\'f7\'e5\'f1\'f2\'e2\'ee_\'ee\'e1\'f0\'e0\'e7\'ee\'e2\'e0\'ed\'e8\'ff \'f1\'f0\'e5\'e4\'ed\'e5\'e5 OR \'ca\'e0\'f7\'e5\'f1\'f2\'e2\'ee_\'ee\'e1\'f0\'e0\'e7\'ee\'e2\'e0\'ed\'e8\'ff \'e2\'fb\'f1\'ee\'ea\'ee\'e5  AND  \'d2\'f3\'f0\'e8\'e7\'ec \'f5\'ee\'f0\'ee\'f8\'ee_\'f0\'e0\'e7\'e2\'e8\'f2 AND \'d7\'e8\'f1\'eb\'e5\'ed\'ed\'ee\'f1\'f2\'fc_\'ed\'e0\'f1\'e5\'eb\'e5\'ed\'e8\'ff \'f1\'f0\'e5\'e4\'ed\'ff\'ff OR \'d7\'e8\'f1\'eb\'e5\'ed\'ed\'ee\'f1\'f2\'fc_\'ed\'e0\'f1\'e5\'eb\'e5\'ed\'e8\'ff \'e2\'fb\'f1\'ee\'ea\'e0\'ff
 \par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,9],
@@ -393,33 +393,33 @@
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [0,9]
-\par \pard\ltrpar END\kerning0\f2\fs16 
+\par \pard END\kerning0\f2\fs16 
 \par 
 \par 
 \par 
-\par \pard\ltrpar\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 20
-\par IF \'ca\'eb\'e8\'ec\'e0\'f2 \'f5\'ee\'eb\'ee\'e4\'ed\'fb\'e9 OR \'ca\'eb\'e8\'ec\'e0\'f2 \'f3\'ec\'e5\'f0\'e5\'ed\'ed\'fb\'e9 AND \'cc\'ee\'f0\'e5 \'e4\'e0 AND \'cf\'eb\'ee\'f9\'e0\'e4\'fc \'f1\'f0\'e5\'e4\'ed\'ff\'ff OR \'cf\'eb\'ee\'f9\'e0\'e4\'fc \'e1\'ee\'eb\'fc\'f8\'e0\'ff AND \'d7\'e8\'f1\'eb\'e5\'ed\'ed\'ee\'f1\'f2\'fc_\'ed\'e0\'f1\'e5\'eb\'e5\'ed\'e8\'ff \'ed\'e8\'e7\'ea\'e0\'ff OR \'d7\'e8\'f1\'eb\'e5\'ed\'ed\'ee\'f1\'f2\'fc_\'ed\'e0\'f1\'e5\'eb\'e5\'ed\'e8\'ff \'f1\'f0\'e5\'e4\'ed\'ff\'ff 
+\par \pard\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 20
+\par IF \'ca\'eb\'e8\'ec\'e0\'f2 \'f5\'ee\'eb\'ee\'e4\'ed\'fb\'e9 OR \'ca\'eb\'e8\'ec\'e0\'f2 \'f3\'ec\'e5\'f0\'e5\'ed\'ed\'fb\'e9 AND \'cc\'ee\'f0\'e5 \'e4\'e0 AND \'cf\'eb\'ee\'f9\'e0\'e4\'fc \'f1\'f0\'e5\'e4\'ed\'ff\'ff OR \'cf\'eb\'ee\'f9\'e0\'e4\'fc \'e1\'ee\'eb\'fc\'f8\'e0\'ff
 \par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [-0,9]
 \par ELSE \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [0,9],
-\par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,9],
+\par \'d1\'f2\'f0\'e0\'ed\'e0 \'ca\'e8\'f2\'e0\'e9 [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c8\'ed\'e4\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'e2\'f1\'f2\'f0\'e0\'eb\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [0,9]
-\par \pard\ltrpar END\kerning0\f2\fs16 
+\par \pard END\kerning0\f2\fs16 
 \par 
 \par 
 \par 
-\par \pard\ltrpar\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 21
+\par \pard\sa160\sl252\slmult1\kerning2\f1\fs22 NAME 21
 \par IF \'ca\'eb\'e8\'ec\'e0\'f2 \'f2\'e5\'ef\'eb\'fb\'e9 AND \'cc\'ee\'f0\'e5 \'e4\'e0 AND \'d2\'f3\'f0\'e8\'e7\'ec \'f5\'ee\'f0\'ee\'f8\'ee_\'f0\'e0\'e7\'e2\'e8\'f2 AND \'cf\'eb\'ee\'f9\'e0\'e4\'fc \'f1\'f0\'e5\'e4\'ed\'ff\'ff 
 \par THEN \'d1\'f2\'f0\'e0\'ed\'e0 \'d0\'ee\'f1\'f1\'e8\'ff [-0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'d1\'d8\'c0 [-0,9],
@@ -437,7 +437,7 @@
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'cd\'ee\'f0\'e2\'e5\'e3\'e8\'ff [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c3\'e0\'e8\'f2\'e8 [0,9],
 \par \'d1\'f2\'f0\'e0\'ed\'e0 \'c0\'f4\'e3\'e0\'ed\'e8\'f1\'f2\'e0\'ed [0,9]
-\par \pard\ltrpar END\kerning0\f2\fs16 
+\par \pard END\kerning0\f2\fs16 
 \par 
 \par 
 \par 
@@ -483,10 +483,10 @@
 \par 
 \par 
 \par \lang1049\f0 
-\par \pard\ltrpar\sa160\sl252\slmult1\f1\fs22 
-\par \pard\ltrpar\f0\fs16 
-\par \pard\ltrpar\sa160\sl252\slmult1\f1\fs22 
-\par \pard\ltrpar\f0\fs16 
+\par \pard\sa160\sl252\slmult1\f1\fs22 
+\par \pard\f0\fs16 
+\par \pard\sa160\sl252\slmult1\f1\fs22 
+\par \pard\f0\fs16 
 \par 
 \par }
  
