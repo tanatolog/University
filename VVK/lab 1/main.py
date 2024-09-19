@@ -40,4 +40,5 @@ task5 = p_proc ** 2 * R(n_mem, n_mem + t5_reserve_mem, p_mem) * R(n_io, n_io + t
 
 task6 = p_proc ** 2 * R(n_mem, n_mem + n_mem, p_mem) * R(n_io, n_io + n_io, p_io)
 
-print(round(0.99989/10, 6))
+print(round(C(6, 7), 6))
+print(round(0.905**6, 6))
