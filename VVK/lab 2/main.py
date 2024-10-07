@@ -38,9 +38,9 @@ t2 = p_n(3.1, 8, 6)
 t3 = l(12, 0.063)
 #print(round(t3, 7))
 
-N = 6
-B = 120 * 1000
-lambd = 12
+N = 3
+B = 60 * 1000
+lambd = 10 
 teta = 4000
 nu = B / teta
 R = lambd / nu
@@ -49,3 +49,4 @@ R = N * p
 U = (l(N, p) + R) / lambd
 W = l(N, p) / lambd
 print(W)
+
