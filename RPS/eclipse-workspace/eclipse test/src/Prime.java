@@ -38,7 +38,7 @@ public class Prime {
 		
 		return arr;
 	}
-	
-	
+
+
 
 }
