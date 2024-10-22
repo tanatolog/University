@@ -344,7 +344,7 @@ while i < xPoint2.__len__():
 
 
 
-'''lambda0 = 0.4
+"""lambda0 = 0.4
 alpha = [100, 10, 1]
 teta = [100, 1, 5]
 k = [1, 50]
@@ -353,4 +353,4 @@ i = 0
 while i < alpha.__len__():
     Vmin.append(lambda0 * alpha[i] * teta[i])
     print("Vmin" + str(i + 1) + " = " + str(Vmin[i]))
-    i = i + 1'''
+    i = i + 1"""
