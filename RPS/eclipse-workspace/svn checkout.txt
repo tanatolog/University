@@ -1,0 +1,1 @@
+svn checkout https://tanatolog.svn.beanstalkapp.com/rps-lab-5/ C:\things\Git\University\RPS\eclipse-workspace\local

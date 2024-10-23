@@ -20,7 +20,7 @@ def speed_test(size):
 
 
 def main():
-    speed_test(10)
+    speed_test(10) # specify the test volume
         
 
 if __name__ == "__main__":

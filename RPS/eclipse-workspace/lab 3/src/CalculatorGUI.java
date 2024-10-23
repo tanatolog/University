@@ -63,6 +63,7 @@ public class CalculatorGUI extends JFrame {
 		super("Small Integer Calculator");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(500, 600);
+		this.setMinimumSize(this.getSize());
 		this.setLocationRelativeTo(null);
 		outputField.setText(label);
 		setLayout(gridBag);
@@ -141,6 +142,10 @@ public class CalculatorGUI extends JFrame {
 					if (line.length() != 0) {
 						arg2 = new SmallInteger(Integer.parseInt(line));
 						switch (operationCounter) {
+						case 0:
+							answer = arg2;
+							break;
+							
 						case 1:
 							answer = arg1.add(arg2);
 							break;
