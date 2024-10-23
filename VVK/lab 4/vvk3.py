@@ -179,14 +179,14 @@ for i in range(Alpha.__len__()):
 
 print('U среднее время пребывания заявки в сети = ' + U_srednee.__str__())
 '''
-'''
-lambda0 = 0.2
+
+"""lambda0 = 0.2
 lambdamas = []
 alpha = [60, 40, 1]
 teta = [16000, 5, 1]
 k = [1, 5000, 100000]
 Up = 20
-Sp = 400000'''
+Sp = 400000"""
 
 lambda0 = 0.4
 lambdamas = []
@@ -195,6 +195,7 @@ teta = [16000, 5, 1]
 k = [1, 5000, 100000]
 Up = 40
 Sp = 500000
+
 Vmin = []
 V = []
 S = []
@@ -274,17 +275,15 @@ deltaU = 0
 while i < 61:
     Ut = (1 / (St - Smin)) * summSQR()
     if (i == 0):
-    #    print(str(i) + ";" + str(round(Ut, 0)) + ";" + str(deltaU) +
-            #  ";" + str(St) + ";" + str(deltaS))
+        print(str(i) + ";" + str(round(Ut, 0)) + ";" + str(deltaU) + ";" + str(St) + ";" + str(deltaS))
     #    print(str(St))
     #    print(str(round(Ut, 0)))
-       print(str(deltaU))
+    #    print(str(deltaU))
     else:
-    #    print(str(i) + ";" + str(round(Ut, 6)) + ";" + str(round((deltaU - Ut),6)) +
-            #   ";" + str(round(St)) + ";" + str(round(deltaS, 6)))
+        print(str(i) + ";" + str(round(Ut, 6)) + ";" + str(round((deltaU - Ut),6)) + ";" + str(round(St)) + ";" + str(round(deltaS, 6)))
     #    print(str(round(St)))
     #    print(str(round(Ut, 6)))
-        print(str(round((deltaU - Ut),6)))
+    #    print(str(round((deltaU - Ut),6)))
     deltaU = Ut
     St = St + deltaS
     i = i + 1
