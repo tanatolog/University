@@ -5,6 +5,9 @@
 
 ## My custom ignore settings
 
+# Rust
+target/
+
 # Eclipse
 .metadata/
 
