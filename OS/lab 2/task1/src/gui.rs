@@ -12,19 +12,14 @@ const TASK_TEXT: &str = "Задание: С помощью мьютексов о
 Второй поток считает координаты третьей вершины треугольника с координатами (–2; 6), (2; –4), (x; y) по координатам двух известных вершин и его площади S (определенной первым потоком), далее считает объем пирамиды с высотой h = [4; 10], шаг 1.";
 
 const BUFFER_SIZE: usize = 36;
-const FIRST_SPEED: u64 = 150;
-const SECOND_SPEED: u64 = 200;
 
 /**Структура приложения */
 pub struct App {
-    first_speed: usize,
-    second_speed: usize,
+    first_speed_ref: Arc<Mutex<usize>>,
+    second_speed_ref: Arc<Mutex<usize>>,
 
-    /*buffer_mutex_ref1: Arc<(Mutex<LimitedVec<f64>>, Condvar)>,
-    buffer_mutex_ref2: Arc<(Mutex<LimitedVec<f64>>, Condvar)>,
-
-    output_mutex_ref1: Arc<Mutex<()>>,
-    output_mutex_ref2: Arc<Mutex<()>>,*/
+    first_table_mutex_ref: Arc<Mutex<Vec<String>>>,
+    second_table_mutex_ref: Arc<Mutex<Vec<String>>>,
 
     first_handle: Option<JoinHandle<()>>,
     second_handle: Option<JoinHandle<()>>,
@@ -35,15 +30,7 @@ pub struct App {
 /**Деструктор приложения */
 impl Drop for App {
     fn drop(&mut self) {
-        self.exit.store(1, Ordering::SeqCst);            // сигнал для потокам завершить работу
-
-        // Ожидаем завершения потоков
-        if let Some(handle) = self.first_handle.take() {
-            handle.join().unwrap();
-        }
-        if let Some(handle) = self.second_handle.take() {
-            handle.join().unwrap();
-        }
+        self.execute_threads();
     }
 }
 
@@ -57,12 +44,17 @@ impl eframe::App for App {
         .resizable(false)
         .show(ctx, |ui| {
             ui.label("Частота первого потока:");
-            ui.add(egui::Slider::new(&mut self.first_speed, 0..=100));
+            ui.add(egui::Slider::new(&mut *self.first_speed_ref.lock().unwrap(), 0..=100));
             ui.label("Частота второго потока:");
-            ui.add(egui::Slider::new(&mut self.second_speed, 0..=100));
+            ui.add(egui::Slider::new(&mut *self.second_speed_ref.lock().unwrap(), 0..=100));
+
+            if ui.button("Сброс").clicked() {
+                self.reset_threads();
+            }
         });
 
-        egui::CentralPanel::default().show(ctx, |_| {  // центральная панель
+        egui::CentralPanel::default()                   // центральная панель
+        .show(ctx, |_| {
 
             egui::TopBottomPanel::top("central")  // побочная верхняя панель
             .resizable(false)
@@ -71,12 +63,14 @@ impl eframe::App for App {
             });
 
             egui::SidePanel::left("table1")            // побочная левая панель
+                .min_width(150.0)
                 .resizable(false)
                 .show(ctx, |ui| {
                     self.first_table(ui, "table1", "Первый поток");
                 });
 
             egui::SidePanel::right("table2")            // побочная правая панель
+                .min_width(680.0)
                 .resizable(false)
                 .show(ctx, |ui| {
                     self.second_table(ui, "table2", "Второй поток");
@@ -85,16 +79,34 @@ impl eframe::App for App {
     }
 }
 
+/**Функция управления скоростью потоков*/
+fn delay(speed: Arc<Mutex<usize>>) {
+    let time;
+    if *speed.lock().unwrap() == 0 {
+        loop {
+            thread::sleep(Duration::from_millis(500));
+            if *speed.lock().unwrap() != 0 {
+                break;
+            }
+        }
+        time = 2000 - (*speed.lock().unwrap() as u64 * 20);
+    } else {
+        time = 2000 - (*speed.lock().unwrap() as u64 * 20);
+    }
+    thread::sleep(Duration::from_millis(time));
+}
+
 /**Функция потока 1*/
-fn first_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mutex: Arc<Mutex<()>>) {
+fn first_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
     let mut counter = 1;
     for i in 9..=14 {
         for j in 9..=14 {
 
             let area = calculate_triangle_area(4.0, 3.0, 8.0, 12.0, i as f64, j as f64);
             let pyramid_surface = calculate_pyramid_surface(area, (i + j) as f64);
+            let entry = format!("{counter}: S = {area}, G = {pyramid_surface}");
 
-            thread::sleep(Duration::from_millis(FIRST_SPEED));
+            delay(speed.clone());
 
             {
                 let (lock, cvar) = &*buffer_mutex;  // разыменоваем arc и получаем ссылку на кортеж (Mutex<LimitedVec<f64>>, Condvar)
@@ -105,14 +117,12 @@ fn first_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mut
                 }
 
                 buffer.push(area).unwrap();
-                println!("Thread 1:{counter} bufflen = {}", buffer.len());
                 cvar.notify_one();
                 // Освобождение мьютекса
             }
 
             {
-                let _non = output_mutex.lock().unwrap();            // ожидание освобождения мьютекса и его захват
-                println!("Thread 1:{counter} i = {i}, j = {j}, S = {area}, G = {pyramid_surface}");
+                output_mutex.lock().unwrap().push(entry);                              // ожидание освобождения мьютекса и его захват
                 // Освобождение мьютекса
             }
             counter += 1;
@@ -121,13 +131,12 @@ fn first_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mut
 }
 
 /**Функция для потока 2*/
-fn second_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mutex: Arc<Mutex<()>>) {
+fn second_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
     let mut counter = 1;
-
     while counter <= 36 {
         let area: f64;
 
-        thread::sleep(Duration::from_millis(SECOND_SPEED));
+        delay(speed.clone());
 
         {
             let (lock, cvar) = &*buffer_mutex;  // разыменоваем arc и получаем ссылку на кортеж (Mutex<LimitedVec<f64>>, Condvar)
@@ -138,7 +147,6 @@ fn second_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mu
             }
 
             area = buffer.remove(0).unwrap();
-            println!("Thread 2:{counter} bufflen = {}", buffer.len());
             cvar.notify_one();
             // Освобождение мьютекса
         }
@@ -152,9 +160,10 @@ fn second_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mu
             volume.push(area * h as f64);
         }
 
+        let entry = format!("{counter}: S = {area:.2}, Volume = {volume:?}, Third Vertexes = ({x3_1:.2}; {y3_1:.2}), ({x3_2:.2}; {y3_2:.2})");
         {
-            let _non = output_mutex.lock().unwrap();
-            println!("Thread 2:{counter} S = {area}, Volume = {volume:?}, Third Vertexes = ({x3_1:.2}; {y3_1:.2}), ({x3_2:.2}; {y3_2:.2})");
+            output_mutex.lock().unwrap().push(entry);
+            // Освобождение мьютекса
         }
         counter += 1;
     }
@@ -164,47 +173,31 @@ fn second_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mu
 impl App {
     /**Конструктор приложения */
     pub fn new() -> Self {
+        // Создаем мьютексы, оборачиваем в arc для разделения доступа к ним
+        let first_table_mutex_ref = Arc::new(Mutex::new(Vec::new()));
+        let second_table_mutex_ref = Arc::new(Mutex::new(Vec::new()));
+        let first_speed_ref = Arc::new(Mutex::new(0));
+        let second_speed_ref = Arc::new(Mutex::new(0));
+
         let mut slf = Self { // создаем поля
-            first_speed: 0,
-            second_speed: 0,
+            first_speed_ref,
+            second_speed_ref,
+
             exit: Arc::new(AtomicUsize::new(0)),
-
-            /*// Клонируем указатели на мьютексы для передачи в потоки
-            buffer_mutex_ref1:buffer_mutex.clone(),
-            buffer_mutex_ref2:buffer_mutex.clone(),
-
-            output_mutex_ref1:output_mutex.clone(),
-            output_mutex_ref2:output_mutex.clone(),*/
 
             first_handle: None,
             second_handle: None,
+
+            first_table_mutex_ref,
+            second_table_mutex_ref,
         };
 
-        // Создаем мьютексы, оборачиваем в arc для разделения доступа к ним
-        let buffer_mutex_ref = Arc::new((Mutex::new(LimitedVec::new(BUFFER_SIZE)), Condvar::new()));
-        let output_mutex_ref = Arc::new(Mutex::new(()));
-
-        // Клонируем указатели на мьютексы для передачи и создаем потоки
-        slf.first_handle = Some(thread::spawn({
-            let buffer_mutex = buffer_mutex_ref.clone();
-            let output_mutex = output_mutex_ref.clone();
-            move || {
-                first_thread(buffer_mutex, output_mutex);
-            }
-        }));
-
-        slf.second_handle = Some(thread::spawn({
-            let buffer_mutex = buffer_mutex_ref.clone();
-            let output_mutex = output_mutex_ref.clone();
-            move || {
-                second_thread(buffer_mutex, output_mutex);
-            }
-        }));
-
+        slf.birth_threads();
         slf                       // возвращаем ссылку на созданный экземпляр приложения
     }
 
-    fn first_table(&self, ui: &mut egui::Ui, table_name: &str, title: &str) {
+    fn first_table(&self, ui: &mut egui::Ui, _table_name: &str, title: &str) {
+        let data = self.first_table_mutex_ref.lock().unwrap();
         ui.vertical(|ui| {
             ui.label(title);
             egui::Frame::none()
@@ -212,15 +205,16 @@ impl App {
                 .inner_margin(egui::style::Margin::same(5.0))
                 .show(ui, |ui| {
                     egui::ScrollArea::new([false, true]).show(ui, |ui| {
-                        egui::Grid::new(table_name).show(ui, |ui| {
-                          
-                        });
+                        for entry in data.iter() {
+                            ui.label(entry);
+                        }
                     });
                 });
         });
     }
 
-    fn second_table(&self, ui: &mut egui::Ui, table_name: &str, title: &str) {
+    fn second_table(&self, ui: &mut egui::Ui, _table_name: &str, title: &str) {
+        let data = self.second_table_mutex_ref.lock().unwrap();
         ui.vertical(|ui| {
             ui.label(title);
             egui::Frame::none()
@@ -228,11 +222,66 @@ impl App {
                 .inner_margin(egui::style::Margin::same(5.0))
                 .show(ui, |ui| {
                     egui::ScrollArea::new([false, true]).show(ui, |ui| {
-                        egui::Grid::new(table_name).show(ui, |ui| {
-
-                        });
+                        for entry in data.iter() {
+                            ui.label(entry);
+                        }
                     });
                 });
         });
+    }
+
+    /**Инициализация и запуск потоков */
+    fn birth_threads(&mut self) {
+        let buffer_mutex_ref = Arc::new((Mutex::new(LimitedVec::new(BUFFER_SIZE)), Condvar::new()));
+        let first_output_mutex = self.first_table_mutex_ref.clone();
+        let second_output_mutex = self.second_table_mutex_ref.clone();
+        let first_speed_mutex = self.first_speed_ref.clone();
+        let second_speed_mutex = self.second_speed_ref.clone();
+        // скорость = 0
+        *self.first_speed_ref.lock().unwrap() = 0;
+        *self.second_speed_ref.lock().unwrap() = 0;
+
+        // Клонируем указатели на мьютексы для передачи и создаем потоки
+        self.first_handle = Some(thread::spawn({
+            let buffer_mutex = buffer_mutex_ref.clone();
+            move || {
+                first_thread(buffer_mutex, first_output_mutex, first_speed_mutex);
+            }
+        }));
+
+        self.second_handle = Some(thread::spawn({
+            let buffer_mutex = buffer_mutex_ref;
+            move || {
+                second_thread(buffer_mutex, second_output_mutex, second_speed_mutex);
+            }
+        }));
+
+    }
+
+    /**Остановка потоков */
+    fn execute_threads(&mut self) {
+        *self.first_speed_ref.lock().unwrap() = 100;
+        *self.second_speed_ref.lock().unwrap() = 100;
+        self.exit.store(1, Ordering::SeqCst);            // сигнал потокам завершить работу
+
+        // Ожидаем завершения потоков
+        if let Some(handle) = self.first_handle.take() {
+            handle.join().unwrap();
+        }
+        if let Some(handle) = self.second_handle.take() {
+            handle.join().unwrap();
+        }
+    }
+
+    /**Перезапуск потоков и очистка таблиц*/
+    fn reset_threads(&mut self) {
+        self.execute_threads();
+
+        self.first_table_mutex_ref.lock().unwrap().clear();         // Очистка таблиц
+        self.second_table_mutex_ref.lock().unwrap().clear();
+
+        self.exit.store(0, Ordering::SeqCst);            // Сброс флага завершения
+
+        self.birth_threads();
     }
 }
