@@ -5,13 +5,12 @@ use std::sync::{Arc, Mutex, Condvar};
 use std::time::Duration;
 
 use crate::limeted_vec::LimitedVec;
-use crate::model::{calculate_pyramid_surface, calculate_triangle_area, find_third_vertex};
+use crate::dekker::Dekker;
 
-const TASK_TEXT: &str = "Задание: С помощью мьютексов организовать работу параллельных вычислительных потоков.
-Первый поток считает площадь треугольника S, координаты вершин которого (4; 3), (8; 12), (i; j), где i, j = [9; 14], шаг 1, затем считает площадь поверхности пирамиды G с высотой равной (i+j). 
-Второй поток считает координаты третьей вершины треугольника с координатами (–2; 6), (2; –4), (x; y) по координатам двух известных вершин и его площади S (определенной первым потоком), далее считает объем пирамиды с высотой h = [4; 10], шаг 1.";
+const TASK_TEXT: &str = "Задание: Задачу о производителе и потребителе с кольцевым буфером решить с помощью алгоритма Деккера.";
 
-const BUFFER_SIZE: usize = 36;
+const BUFFER_SIZE: usize = 6;
+const TASK_SIZE: usize = 100;
 
 /**Структура приложения */
 pub struct App {
@@ -43,9 +42,9 @@ impl eframe::App for App {
         egui::SidePanel::right("right")                // правая боковая панель
         .resizable(false)
         .show(ctx, |ui| {
-            ui.label("Частота первого потока:");
+            ui.label("Скорость производителя:");
             ui.add(egui::Slider::new(&mut *self.first_speed_ref.lock().unwrap(), 0..=100));
-            ui.label("Частота второго потока:");
+            ui.label("Скорость потребителя:");
             ui.add(egui::Slider::new(&mut *self.second_speed_ref.lock().unwrap(), 0..=100));
 
             if ui.button("Сброс").clicked() {
@@ -63,17 +62,17 @@ impl eframe::App for App {
             });
 
             egui::SidePanel::left("table1")            // побочная левая панель
-                .min_width(150.0)
+                .min_width(300.0)
                 .resizable(false)
                 .show(ctx, |ui| {
-                    self.first_table(ui, "table1", "Первый поток");
+                    self.first_table(ui, "table1", "Производитель");
                 });
 
             egui::SidePanel::right("table2")            // побочная правая панель
-                .min_width(680.0)
+                .min_width(300.0)
                 .resizable(false)
                 .show(ctx, |ui| {
-                    self.second_table(ui, "table2", "Второй поток");
+                    self.second_table(ui, "table2", "Потребитель");
                 });
         });
     }
@@ -97,75 +96,59 @@ fn delay(speed: Arc<Mutex<usize>>) {
 }
 
 /**Функция потока 1*/
-fn first_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
-    let mut counter = 1;
-    for i in 9..=14 {
-        for j in 9..=14 {
+fn first_thread(buffer_mutex: Arc<(Mutex<LimitedVec<usize>>, Condvar)>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
+    for i in 1..=TASK_SIZE {
+        let length: usize;
+        delay(speed.clone());
 
-            let area = calculate_triangle_area(4.0, 3.0, 8.0, 12.0, i as f64, j as f64);
-            let pyramid_surface = calculate_pyramid_surface(area, (i + j) as f64);
-            let entry = format!("{counter}: S = {area}, G = {pyramid_surface}");
+        {
+            let (lock, cvar) = &*buffer_mutex;  // разыменоваем arc и получаем ссылку на кортеж (Mutex<LimitedVec<f64>>, Condvar)
+            let mut buffer = lock.lock().unwrap();    // ожидание освобождения мьютекса и его захват
 
-            delay(speed.clone());
-
-            {
-                let (lock, cvar) = &*buffer_mutex;  // разыменоваем arc и получаем ссылку на кортеж (Mutex<LimitedVec<f64>>, Condvar)
-                let mut buffer = lock.lock().unwrap();  // ожидание освобождения мьютекса и его захват
-
-                while buffer.len() == BUFFER_SIZE {                                    // если в буфере нет места, то освобождаем мьютекс и ждем
-                    buffer = cvar.wait(buffer).unwrap();
-                }
-
-                buffer.push(area).unwrap();
-                cvar.notify_one();
-                // Освобождение мьютекса
+            while buffer.len() == BUFFER_SIZE {                                      // если в буфере нет места, то освобождаем мьютекс и ждем
+                buffer = cvar.wait(buffer).unwrap();
             }
 
-            {
-                output_mutex.lock().unwrap().push(entry);                              // ожидание освобождения мьютекса и его захват
-                // Освобождение мьютекса
-            }
-            counter += 1;
+            buffer.push(i).unwrap();
+            length = buffer.len();
+            cvar.notify_one();
+            // Освобождение мьютекса
+        }
+
+        let entry = format!("Положил продукт №{i}, в буфере {length}");
+        {
+            output_mutex.lock().unwrap().push(entry);                                // ожидание освобождения мьютекса и его захват
+            // Освобождение мьютекса
         }
     }
 }
 
 /**Функция для потока 2*/
-fn second_thread(buffer_mutex: Arc<(Mutex<LimitedVec<f64>>, Condvar)>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
-    let mut counter = 1;
-    while counter <= 36 {
-        let area: f64;
-
+fn second_thread(buffer_mutex: Arc<(Mutex<LimitedVec<usize>>, Condvar)>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
+    for _i in 1..=TASK_SIZE {
+        let product: usize;
+        let length: usize;
         delay(speed.clone());
 
         {
             let (lock, cvar) = &*buffer_mutex;  // разыменоваем arc и получаем ссылку на кортеж (Mutex<LimitedVec<f64>>, Condvar)
-            let mut buffer = lock.lock().unwrap();  // ожидание освобождения мьютекса и его захват
+            let mut buffer = lock.lock().unwrap();    // ожидание освобождения мьютекса и его захват
 
-            while buffer.is_empty() {                                              // если в буфере нет места, то освобождаем мьютекс и ждем
+            while buffer.is_empty() {                                                // если в буфере нет места, то освобождаем мьютекс и ждем
                 buffer = cvar.wait(buffer).unwrap();
             }
 
-            area = buffer.remove(0).unwrap();
+            product = buffer.remove(0).unwrap();
+            length = buffer.len();
             cvar.notify_one();
             // Освобождение мьютекса
         }
 
-        // Нахождение координаты третьей вершины (x3, y3) для треугольника с вершинами (-2, 6), (2, -4) и площадью area.
-        let ((x3_1, y3_1), (x3_2, y3_2)) = find_third_vertex(-2.0, 6.0, 2.0, -4.0, area);
-
-        // Рассчитываем объем пирамиды
-        let mut volume = Vec::new();
-        for h in 4..=10 {
-            volume.push(area * h as f64);
-        }
-
-        let entry = format!("{counter}: S = {area:.2}, Volume = {volume:?}, Third Vertexes = ({x3_1:.2}; {y3_1:.2}), ({x3_2:.2}; {y3_2:.2})");
+        let entry = format!("Получил продукт №{product}, в буфере {length}");
         {
             output_mutex.lock().unwrap().push(entry);
             // Освобождение мьютекса
         }
-        counter += 1;
     }
 }
 

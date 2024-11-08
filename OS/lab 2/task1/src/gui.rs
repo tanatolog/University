@@ -43,9 +43,9 @@ impl eframe::App for App {
         egui::SidePanel::right("right")                // правая боковая панель
         .resizable(false)
         .show(ctx, |ui| {
-            ui.label("Частота первого потока:");
+            ui.label("Скорость первого потока:");
             ui.add(egui::Slider::new(&mut *self.first_speed_ref.lock().unwrap(), 0..=100));
-            ui.label("Частота второго потока:");
+            ui.label("Скорость второго потока:");
             ui.add(egui::Slider::new(&mut *self.second_speed_ref.lock().unwrap(), 0..=100));
 
             if ui.button("Сброс").clicked() {
