@@ -1,11 +1,11 @@
 use eframe::egui;
 use std::thread::{self, JoinHandle};
 use std::sync::atomic::{AtomicUsize, Ordering};
-use std::sync::{Arc, Mutex, Condvar};
+use std::sync::{Arc, Mutex};
 use std::time::Duration;
 
 use crate::limeted_vec::LimitedVec;
-use crate::dekker::Dekker;
+use crate::shared_container::SharedContainer;
 
 const TASK_TEXT: &str = "Задание: Задачу о производителе и потребителе с кольцевым буфером решить с помощью алгоритма Деккера.";
 
@@ -96,52 +96,54 @@ fn delay(speed: Arc<Mutex<usize>>) {
 }
 
 /**Функция потока 1*/
-fn first_thread(buffer_mutex: Arc<(Mutex<LimitedVec<usize>>, Condvar)>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
+fn first_thread(shared_buffer: Arc<SharedContainer<LimitedVec<usize>>>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
     for i in 1..=TASK_SIZE {
         let length: usize;
         delay(speed.clone());
 
         {
-            let (lock, cvar) = &*buffer_mutex;  // разыменоваем arc и получаем ссылку на кортеж (Mutex<LimitedVec<f64>>, Condvar)
-            let mut buffer = lock.lock().unwrap();    // ожидание освобождения мьютекса и его захват
+            let lock = &*shared_buffer;  // разыменоваем arc и получаем ссылку на кортеж SharedContainer<LimitedVec<f64>>
+            let mut buffer = lock.get_first();    // ожидание освобождения ресурса и его захват
 
-            while buffer.len() == BUFFER_SIZE {                                      // если в буфере нет места, то освобождаем мьютекс и ждем
-                buffer = cvar.wait(buffer).unwrap();
+            while buffer.len() == BUFFER_SIZE {                           // если в буфере нет места, то освобождаем рес и ждем
+                lock.unlock_first();
+                thread::sleep(Duration::from_millis(100));
+                buffer = lock.get_first();
             }
 
             buffer.push(i).unwrap();
             length = buffer.len();
-            cvar.notify_one();
-            // Освобождение мьютекса
-        }
+            lock.unlock_first();                                          // Освобождение реса
+        }                                       
 
         let entry = format!("Положил продукт №{i}, в буфере {length}");
         {
-            output_mutex.lock().unwrap().push(entry);                                // ожидание освобождения мьютекса и его захват
+            output_mutex.lock().unwrap().push(entry);                     // ожидание освобождения мьютекса и его захват
             // Освобождение мьютекса
         }
     }
 }
 
 /**Функция для потока 2*/
-fn second_thread(buffer_mutex: Arc<(Mutex<LimitedVec<usize>>, Condvar)>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
+fn second_thread(shared_buffer: Arc<SharedContainer<LimitedVec<usize>>>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
     for _i in 1..=TASK_SIZE {
         let product: usize;
         let length: usize;
         delay(speed.clone());
 
         {
-            let (lock, cvar) = &*buffer_mutex;  // разыменоваем arc и получаем ссылку на кортеж (Mutex<LimitedVec<f64>>, Condvar)
-            let mut buffer = lock.lock().unwrap();    // ожидание освобождения мьютекса и его захват
-
-            while buffer.is_empty() {                                                // если в буфере нет места, то освобождаем мьютекс и ждем
-                buffer = cvar.wait(buffer).unwrap();
+            let lock = &*shared_buffer;  // разыменоваем arc и получаем ссылку на кортеж SharedContainer<LimitedVec<f64>>
+            let mut buffer = lock.get_second();   // ожидание освобождения ресурса и его захват
+    
+            while buffer.is_empty() {                                     // если буфер пуст, то освобождаем рес и ждем
+                    lock.unlock_second();
+                    thread::sleep(Duration::from_millis(100));
+                    buffer = lock.get_second();
             }
 
             product = buffer.remove(0).unwrap();
             length = buffer.len();
-            cvar.notify_one();
-            // Освобождение мьютекса
+            lock.unlock_second();                                         // Освобождение реса
         }
 
         let entry = format!("Получил продукт №{product}, в буфере {length}");
@@ -215,7 +217,7 @@ impl App {
 
     /**Инициализация и запуск потоков */
     fn birth_threads(&mut self) {
-        let buffer_mutex_ref = Arc::new((Mutex::new(LimitedVec::new(BUFFER_SIZE)), Condvar::new()));
+        let buffer_mutex_ref = Arc::new(SharedContainer::new(LimitedVec::new(BUFFER_SIZE)));
         let first_output_mutex = self.first_table_mutex_ref.clone();
         let second_output_mutex = self.second_table_mutex_ref.clone();
         let first_speed_mutex = self.first_speed_ref.clone();

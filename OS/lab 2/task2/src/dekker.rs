@@ -1,5 +1,6 @@
 use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 
+/**Алгоритм Деккера для 2 потоков */
 pub struct Dekker {
     want: [AtomicBool; 2],
     turn: AtomicUsize,
