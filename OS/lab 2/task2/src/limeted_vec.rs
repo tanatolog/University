@@ -42,7 +42,7 @@ impl<T> LimitedVec<T> {
         }
     }
 
-/* 
+ /*
      /** Метод для получения элемента по индексу*/
      pub fn get(&self, index: usize) -> Option<&T> {
         self.vec.get(index)

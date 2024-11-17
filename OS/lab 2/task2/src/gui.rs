@@ -96,7 +96,7 @@ fn delay(speed: Arc<Mutex<usize>>) {
 }
 
 /**Функция потока 1*/
-fn first_thread(shared_buffer: Arc<SharedContainer<LimitedVec<usize>>>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
+fn first_thread(shared_buffer: Arc<SharedContainer<LimitedVec<(usize, usize)>>>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
     for i in 1..=TASK_SIZE {
         let length: usize;
         delay(speed.clone());
@@ -111,12 +111,12 @@ fn first_thread(shared_buffer: Arc<SharedContainer<LimitedVec<usize>>>, output_m
                 buffer = lock.get_first();
             }
 
-            buffer.push(i).unwrap();
             length = buffer.len();
+            buffer.push((i, length)).unwrap();
             lock.unlock_first();                                          // Освобождение реса
         }                                       
 
-        let entry = format!("Положил продукт №{i}, в буфере {length}");
+        let entry = format!("Положил продукт №{i} в ячейку {length}");
         {
             output_mutex.lock().unwrap().push(entry);                     // ожидание освобождения мьютекса и его захват
             // Освобождение мьютекса
@@ -125,9 +125,9 @@ fn first_thread(shared_buffer: Arc<SharedContainer<LimitedVec<usize>>>, output_m
 }
 
 /**Функция для потока 2*/
-fn second_thread(shared_buffer: Arc<SharedContainer<LimitedVec<usize>>>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
+fn second_thread(shared_buffer: Arc<SharedContainer<LimitedVec<(usize, usize)>>>, output_mutex: Arc<Mutex<Vec<String>>>, speed: Arc<Mutex<usize>>) {
     for _i in 1..=TASK_SIZE {
-        let product: usize;
+        let product: (usize, usize);
         let length: usize;
         delay(speed.clone());
 
@@ -146,7 +146,10 @@ fn second_thread(shared_buffer: Arc<SharedContainer<LimitedVec<usize>>>, output_
             lock.unlock_second();                                         // Освобождение реса
         }
 
-        let entry = format!("Получил продукт №{product}, в буфере {length}");
+        let number = product.0;
+        let cell = product.1;
+        let entry = format!("Получил продукт №{number} из ячейки {cell}, в буффуре {length}");
+
         {
             output_mutex.lock().unwrap().push(entry);
             // Освобождение мьютекса
