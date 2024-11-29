@@ -1,0 +1,19 @@
+var
+i, j, ost, z, n: integer;
+begin
+   for i := 0 to processcount - 1 do begin
+      for j := 0 to ResourceCount - 1 do begin
+         ost := max[i][j] - (received[i][j] + query[i][j]);
+         z := query[i][j];
+         for n := 0 to processcount - 1 do z := z + received[n][j];
+         if ost <= (Resources[j].Count - z)
+            then permit[i][j] := true
+            else permit[i][j] := false;
+      end;
+   end;
+   for i:= 0 to 2 do begin
+      for j:= 0 to 2 do begin
+           writeln(BoolToStr(Permit[i][j]));
+       end;
+   end;
+end;
