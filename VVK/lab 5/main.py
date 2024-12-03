@@ -64,15 +64,15 @@ for i in range(n_loop.__len__()):
 	print(E(L, tsc, tstart(ti, tc_loop[i] * 1e-9, n_loop[i]), tc_loop[i] * 1e-9).__round__(6))
 
 
-p = P(128, 5, 14e-9, 16e-9) + P(32, 5, 14e-9, 10e-9) + P(32, 5, 14e-9, 16e-9)
+p = P(128, 5, 14e-9, 16e-9) + P(32, 5, 14e-9, 0) + P(32, 5, 14e-9, 0)
 print(P(128, 5, 14e-9, 16e-9))
 print(P(32, 5, 14e-9, 10e-9))
 print(P(32, 5, 14e-9, 16e-9))
 print(f'P = {p / 3}')
 
 e = E(128, 65e-9, tstart(16e-9, 14e-9, 5), 14e-9) +\
-     E(32, 60e-9, tstart(10e-9, 14e-9, 5), 14e-9) +\
-     E(32, 65e-9, tstart(16e-9, 14e-9, 5), 14e-9)
+     E(32, 65e-9, tstart(0, 14e-9, 5), 14e-9) +\
+     E(32, 65e-9, tstart(0, 14e-9, 5), 14e-9)
 print(E(128, 65e-9, tstart(16e-9, 14e-9, 5), 14e-9))
 print(E(32, 60e-9, tstart(10e-9, 14e-9, 5), 14e-9))
 print(E(32, 65e-9, tstart(16e-9, 14e-9, 5), 14e-9))
