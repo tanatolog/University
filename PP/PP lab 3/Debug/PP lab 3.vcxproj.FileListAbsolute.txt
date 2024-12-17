@@ -1,3 +1,4 @@
 E:\things\VS\Projects\PP lab 3\Debug\PP lab 3.exe
 c:\things\VS\Projects\PP lab 3\Debug\PP lab 3.exe
 C:\things\Git\University\PP\PP lab 3\Debug\PP lab 3.exe
+E:\things\Git\University\PP\PP lab 3\Debug\PP lab 3.exe
