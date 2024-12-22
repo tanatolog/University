@@ -1,10 +1,11 @@
 ﻿#include<stdio.h>
 #include<mpi.h>
 
-#define NUM_ROWS_A 100 // Определение количества строк в матрице A
-#define NUM_COLUMNS_A 100 // Определение количества столбцов в матрице A
-#define NUM_ROWS_B 100 // Определение количества строк в матрице B
-#define NUM_COLUMNS_B 100 // Определение количества столбцов в матрице B
+#define MATRIX_SIZE 5
+#define NUM_ROWS_A 2000 // Определение количества строк в матрице A
+#define NUM_COLUMNS_A 2000 // Определение количества столбцов в матрице A
+#define NUM_ROWS_B 2000 // Определение количества строк в матрице B
+#define NUM_COLUMNS_B 2000 // Определение количества столбцов в матрице B
 #define MASTER_TO_SLAVE_TAG 1 // Тег для сообщений от мастера к рабочим процессам
 #define SLAVE_TO_MASTER_TAG 4 // Тег для сообщений от рабочих процессов к мастеру
 
@@ -23,7 +24,7 @@ MPI_Status status; // Статус для функции MPI_Recv
 MPI_Request request; // Запрос для функции MPI_Isend
 
 // Функция для генерации матриц A и B
-void MasterMakeAB(int num)
+void MasterMakeAB()
 {
     if (rank == 0) {
         for (i = 0; i < NUM_ROWS_A; i++) {
@@ -36,7 +37,7 @@ void MasterMakeAB(int num)
                 mat_b[i][j] = i + j; // Заполнение матрицы B
             }
         }
-        if (num == 1) { printf("\n"); }
+        printf("Start test W%d\n", MATRIX_SIZE);
     }
 }
 
@@ -134,101 +135,9 @@ int main(int argc, char* argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank); // Получение ранга текущего процесса
     MPI_Comm_size(MPI_COMM_WORLD, &size); // Получение общего числа процессов
 
-    MasterMakeAB(1);
+    MasterMakeAB();
     ParallelMul();
-    MasterMakeAB(2);
     ParallelMul();
-    MasterMakeAB(3);
-    ParallelMul();
-    MasterMakeAB(4);
-    ParallelMul();
-    MasterMakeAB(5);
-    ParallelMul();
-    MasterMakeAB(6);
-    ParallelMul();
-    MasterMakeAB(7);
-    ParallelMul();
-    MasterMakeAB(8);
-    ParallelMul();
-    MasterMakeAB(9);
-    ParallelMul();
-    MasterMakeAB(10);
-    ParallelMul();
-    MasterMakeAB(11);
-    ParallelMul();
-    MasterMakeAB(12);
-    ParallelMul();
-    MasterMakeAB(13);
-    ParallelMul();
-    MasterMakeAB(14);
-    ParallelMul();
-    MasterMakeAB(15);
-    ParallelMul();
-    MasterMakeAB(16);
-    ParallelMul();
-    MasterMakeAB(1);
-    ParallelMul();
-    MasterMakeAB(2);
-    ParallelMul();
-    MasterMakeAB(3);
-    ParallelMul();
-    MasterMakeAB(4);
-    ParallelMul();
-    MasterMakeAB(5);
-    ParallelMul();
-    MasterMakeAB(6);
-    ParallelMul();
-    MasterMakeAB(7);
-    ParallelMul();
-    MasterMakeAB(8);
-    ParallelMul();
-    MasterMakeAB(9);
-    ParallelMul();
-    MasterMakeAB(10);
-    ParallelMul();
-    MasterMakeAB(11);
-    ParallelMul();
-    MasterMakeAB(12);
-    ParallelMul();
-    MasterMakeAB(13);
-    ParallelMul();
-    MasterMakeAB(14);
-    ParallelMul();
-    MasterMakeAB(15);
-    ParallelMul();
-    MasterMakeAB(16);
-    ParallelMul();
-    MasterMakeAB(1);
-    ParallelMul();
-    MasterMakeAB(2);
-    ParallelMul();
-    MasterMakeAB(3);
-    ParallelMul();
-    MasterMakeAB(4);
-    ParallelMul();
-    MasterMakeAB(5);
-    ParallelMul();
-    MasterMakeAB(6);
-    ParallelMul();
-    MasterMakeAB(7);
-    ParallelMul();
-    MasterMakeAB(8);
-    ParallelMul();
-    MasterMakeAB(9);
-    ParallelMul();
-    MasterMakeAB(10);
-    ParallelMul();
-    MasterMakeAB(11);
-    ParallelMul();
-    MasterMakeAB(12);
-    ParallelMul();
-    MasterMakeAB(13);
-    ParallelMul();
-    MasterMakeAB(14);
-    ParallelMul();
-    MasterMakeAB(15);
-    ParallelMul();
-    MasterMakeAB(16);
     ParallelMul();
 
     MPI_Finalize(); // Завершение работы MPI

@@ -1,0 +1,8 @@
+ssh node - вход на сервер
+scp -B -r F:\task\* node:~/task2
+scp -B -r node:~/task2/* F:\task - выгрузить из сервера
+exit - выход из сервера
+nano lab7.sh - текстовый редактор
+ls -all - вывести файлы
+chmod +x lab8.sh - дать файлу права
+cd task2 - переход к папке
