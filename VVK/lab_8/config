@@ -1,0 +1,5 @@
+Host node
+	Hostname 10.128.1.170
+	User student0
+	PubKeyAuthentication yes
+	IdentityFile C:\Users\class\.ssh\student0.key

@@ -3,7 +3,7 @@
 #include <mpi.h>
 
 #define MATRIX_SIZE 13
-#define N 1505 // Adjust N to control the size of the matrices
+#define N 750 // Adjust N to control the size of the matrices
 
 /*Implement Matrix_Multiply*/
 void Matrix_Multiply(float* A, float* B, float* C, int m, int n, int p) {
